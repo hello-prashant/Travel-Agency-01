@@ -30,7 +30,8 @@ const SafetyTrustSection: React.FC = () => {
       bgColor: 'bg-emerald-100',
       iconColor: 'text-emerald-700',
       hoverBg: 'group-hover:bg-emerald-200'
-    }
+    },
+    
   ];
 
   return (
@@ -49,7 +50,7 @@ const SafetyTrustSection: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-15">
             {features.map((feature, index) => (
               <div
                 key={index}
