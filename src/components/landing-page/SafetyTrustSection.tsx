@@ -82,7 +82,7 @@ const SafetyTrustSection: React.FC = () => {
               }}
             >
               <img
-                src="/Safety&Trust/safe.png"
+                src="/Safety&Trust/safe2.png"
                 alt="Beautiful mountain lake with turquoise water and boats"
                 className="w-full  h-[520px] object-cover transition-transform duration-700 group-hover:scale-110"
               />
