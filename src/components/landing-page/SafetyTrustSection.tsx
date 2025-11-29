@@ -76,7 +76,7 @@ const SafetyTrustSection: React.FC = () => {
           {/* Image Section */}
           <div className=" relative group flex justify-center items-center  ">
             <div 
-              className=" w-[60%]  overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+              className=" sm:w-[60%]  overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
               style={{
                 borderRadius: '100px 0px 100px 0',
               }}
@@ -90,7 +90,7 @@ const SafetyTrustSection: React.FC = () => {
             </div>
             
             {/* Floating Badge */}
-            <div className="absolute bottom-6 left-45 bg-blue-500/60 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+            <div className="absolute bottom-6 bg-blue-500/60 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
               <p className="text-sm font-semibold text-white">Explore with Confidence</p>
             </div>
 
