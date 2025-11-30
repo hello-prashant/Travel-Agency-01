@@ -26,7 +26,7 @@ const KeyFeatures: React.FC = () => {
                 <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-full ">
                   <div className="relative h-7 w-7">
                     <Image
-                      src="/Key-feature/icon 1.png" 
+                      src="/Key-feature/icon 1.png"
                       alt="AI Trip Planner icon"
                       fill
                       className="object-contain"
@@ -49,7 +49,7 @@ const KeyFeatures: React.FC = () => {
                 <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-full ">
                   <div className="relative h-7 w-7">
                     <Image
-                      src="/Key-feature/icon 2.png" 
+                      src="/Key-feature/icon 2.png"
                       alt="Travel Matching icon"
                       fill
                       className="object-contain"
@@ -72,7 +72,7 @@ const KeyFeatures: React.FC = () => {
                 <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-full ">
                   <div className="relative h-7 w-7">
                     <Image
-                      src="/Key-feature/icon 3.png" 
+                      src="/Key-feature/icon 3.png"
                       alt="Safety and trust icon"
                       fill
                       className="object-contain"
@@ -95,7 +95,7 @@ const KeyFeatures: React.FC = () => {
                 <div className="mt-1 flex h-12 w-12 items-center justify-center rounded-full ">
                   <div className="relative h-7 w-7">
                     <Image
-                      src="/Key-feature/icon 4.png" 
+                      src="/Key-feature/icon 4.png"
                       alt="Social discovery icon"
                       fill
                       className="object-contain"
@@ -115,53 +115,51 @@ const KeyFeatures: React.FC = () => {
             </div>
           </div>
 
-
           {/* RIGHT SIDE IMAGE GRID */}
-         {/* RIGHT SIDE IMAGE GRID – asymmetric rounded corners */}
-<div className="w-full md:w-1/2">
-  <div className="grid grid-cols-2 grid-rows-2 gap-4">
-    {/* 1st image: TL square, TR & Bl rounded, Br square */}
-    <div className="relative aspect-[4/3] overflow-hidden rounded-tr-[28px] rounded-bl-[28px] shadow-md">
-      <Image
-        src="/Key-feature/image-1.png"
-        alt="Travellers at the coast"
-        fill
-        className="object-cover transition-transform duration-500 hover:scale-110"
-      />
-    </div>
+          {/* RIGHT SIDE IMAGE GRID – asymmetric rounded corners */}
+          <div className="w-full md:w-1/2">
+            <div className="grid grid-cols-2 grid-rows-2 gap-4">
+              {/* 1st image: TL square, TR & Bl rounded, Br square */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-tr-[28px] rounded-bl-[28px] shadow-md">
+                <Image
+                  src="/Key-feature/image-1.png"
+                  alt="Travellers at the coast"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
 
-    {/* 2nd image: TR & Bl square, TL & Br rounded */}
-    <div className="relative aspect-[4/3] overflow-hidden rounded-tl-[28px] rounded-br-[28px] shadow-md">
-      <Image
-        src="/Key-feature/image-2.png"
-        alt="Couple taking selfie"
-        fill
-        className="object-cover transition-transform duration-500 hover:scale-110"
-      />
-    </div>
+              {/* 2nd image: TR & Bl square, TL & Br rounded */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-tl-[28px] rounded-br-[28px] shadow-md">
+                <Image
+                  src="/Key-feature/image-2.png"
+                  alt="Couple taking selfie"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
 
-    {/* 3rd image: same as 2nd */}
-    <div className="relative aspect-[4/3] overflow-hidden rounded-tl-[28px] rounded-br-[28px] shadow-md">
-      <Image
-        src="/Key-feature/image-3.png"
-        alt="Airplane wing at sunset"
-        fill
-        className="object-cover transition-transform duration-500 hover:scale-110"
-      />
-    </div>
+              {/* 3rd image: same as 2nd */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-tl-[28px] rounded-br-[28px] shadow-md">
+                <Image
+                  src="/Key-feature/image-3.png"
+                  alt="Airplane wing at sunset"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
 
-    {/* 4th image: same as 1st */}
-    <div className="relative aspect-[4/3] overflow-hidden rounded-tr-[28px] rounded-bl-[28px] shadow-md">
-      <Image
-        src="/Key-feature/image-4.png"
-        alt="Group of friends hiking"
-        fill
-        className="object-cover transition-transform duration-500 hover:scale-110"
-      />
-    </div>
-  </div>
-</div>
-
+              {/* 4th image: same as 1st */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-tr-[28px] rounded-bl-[28px] shadow-md">
+                <Image
+                  src="/Key-feature/image-4.png"
+                  alt="Group of friends hiking"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
