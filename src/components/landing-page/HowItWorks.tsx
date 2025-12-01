@@ -13,25 +13,25 @@ interface Step {
 const steps: Step[] = [
   {
     id: 1,
-    title: "Plan smarter with AI",
+    title: "Step 1. Plan smarter with AI",
     desc: "Let AI craft your ideal travel plan based on your interests.",
     img: "/steps-images/step1.png",
   },
   {
     id: 2,
-    title: "Meet verified travelers",
+    title: "Step 2. Meet verified travelers",
     desc: "Connect with like-minded people who share your journey.",
     img: "/steps-images/step2.png",
   },
   {
     id: 3,
-    title: "Stay safe with built-in protection",
+    title: "Step 3. Stay safe with built-in protection",
     desc: "Advanced safety tools ensure every meetup stays secure.",
     img: "/steps-images/step3.png",
   },
   {
     id: 4,
-    title: "Earn rewards & explore more",
+    title: "Step 4. Earn rewards & explore more",
     desc: "Unlock points and get access to exclusive experiences.",
     img: "/steps-images/step4.png",
   },
@@ -81,7 +81,6 @@ export default function HowItWorks() {
   return (
     <section className="w-full bg-white py-10">
       {/* Title Section */}
-      {/* Title Section */}
       <div ref={sectionRef} className="text-center mb-14 px-4">
         <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
           How It Works
@@ -107,7 +106,7 @@ export default function HowItWorks() {
             key={activeStep.img}
             className="
               relative w-full h-full rounded-3xl overflow-hidden shadow-lg
-              transition-all duration-[700ms]
+              transition-all duration-700
               animate-appleFadeSlide
             "
           >
@@ -117,7 +116,7 @@ export default function HowItWorks() {
               fill
               className="
                 object-cover
-                transition-transform duration-[700ms]
+                transition-transform duration-700
                 ease-[cubic-bezier(0.22,1,0.36,1)]
                 scale-[1.08] 
               "
