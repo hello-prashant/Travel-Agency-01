@@ -60,8 +60,8 @@ const SafetyTrustSection: React.FC = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-8xl mx-auto ">
+    <div ref={sectionRef} className="min-h-screen bg-white py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto ">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -79,7 +79,7 @@ const SafetyTrustSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center "> 
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center justify-center lg:ml-10 "> 
           {/* Features Grid */}
           <div className="relative grid grid-cols-2 sm:grid-cols-2 lg:gap-20 gap-5 flex justify-center items-center ">
             {features.map((feature, index) => (
