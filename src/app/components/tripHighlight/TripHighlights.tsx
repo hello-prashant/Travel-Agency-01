@@ -1,7 +1,5 @@
 import React from 'react';
 
-// This component now displays a solid black circle with a white checkmark inside,
-// matching the appearance in your uploaded image.
 const CheckIcon: React.FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +35,7 @@ const HighlightItem: React.FC<{ text: string }> = ({ text }) => (
 
 // The main component that displays the entire card.
 const App: React.FC = () => {
-  // List of all items given in the original image.
+  // List of all items.
   const highlights: string[] = [
     "Beach activities",
     "Local cuisine",
@@ -55,7 +53,7 @@ const App: React.FC = () => {
           Trip Highlights
         </h1>
 
-        {/* --- This container keeps all items horizontal --- */}
+        
         {/* 'flex' makes it horizontal (row). 'gap-x-16' ensures sufficient spacing between items. 
             'flex-wrap' allows items to wrap to the next line on very small screens (mobile-friendly). */}
         <div className="flex flex-wrap items-start gap-x-16 gap-y-4">
