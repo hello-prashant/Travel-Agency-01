@@ -2,111 +2,118 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="w-full flex flex-col items-center">
-
-      
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow  p-8 flex flex-col gap-4 relative">
-
-        
-        <div className="w-full">
-          <h4 className="text-lg font-semibold mb-4">
-            Featured Travel Agencies
-          </h4>
-        </div>
-
-        <div className="flex gap-4">
-
-        
-          <div className="w-1/4 h-96">
-            <img
-              src="https://th.bing.com/th/id/R.f15778f5631bd17ccb031a2e60e262a1?rik=sefvPz%2fQGzGuGg&riu=http%3a%2f%2f2.bp.blogspot.com%2f-c4Py2wzt7U8%2fUixwB4-og5I%2fAAAAAAAAPGo%2fdSmkEuAWonE%2fs1600%2fburj-al-arab-1.jpg&ehk=ORN%2bnqDi0bIeEwa%2f2rV%2bNNq5h21lYsRrSYZyu2vuu%2fo%3d&risl=&pid=ImgRaw&r=0"
-              alt="agency"
-              className="rounded-lg w-full h-full object-cover"
-            />
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Navbar */}
+      <header className="w-full border-b border-gray-100 bg-white/90 backdrop-blur z-20">
+        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
+          <div className="flex items-center gap-1">
+            <span className="text-2xl font-bold text-pink-500">Travlo</span>
+            <span className="text-2xl font-bold text-pink-500">.</span>
           </div>
 
-    
-          <div className="w-1/2 flex flex-col gap-3">
+          <nav className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+            <button className="hover:text-pink-500">My Trips</button>
+            <button className="hover:text-pink-500">Explore Trips</button>
+            <button className="hover:text-pink-500">Nearby Essentials</button>
+            <button className="hover:text-pink-500">Community</button>
+          </nav>
 
-            <h1 className="text-xl font-bold">Wanderlust Adventures</h1>
+          <div className="flex items-center gap-4 text-sm">
+            <button className="text-gray-700 hover:text-pink-500">Log in</button>
+            <button className="px-4 py-2 rounded-full bg-[#F47C7C] text-white font-medium hover:opacity-90">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </header>
 
-            <p className="text-gray-600">
-              Discover extraordinary travel experiences with us! We specialise in
-              curated adventure tours across breathtaking destinations.
-            </p>
+      {/* Hero Section */}
+      <main className="flex-1 w-full">
+        <div className="relative w-full mx-auto mt-4 md:mt-6">
+          {/* Background banner image */}
+          <div className="relative h-[300px] md:h-[440px] w-full overflow-hidden -mt-[15px] mb-[15px]">
+            <img
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Beach with surfboard"
+              className="w-full h-full object-cover"
+            />
 
-            <div className="flex gap-2 mt-2 flex-wrap">
-              {["Adventure Travel", "Cultural Tour", "Sustainable Travel"].map(
-                (tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs"
-                  >
-                    {tag}
-                  </span>
-                )
-              )}
-            </div>
+            {/* Dark gradient overlay bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-            <div className="mt-3 text-gray-800 space-y-1">
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>500+ travelers enrolled</div>
-              <div> <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/> 150+ trips completed</div>
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>8+ years in business</div>
-            </div>
+            {/* Back button */}
+            <button className="absolute top-6 left-6 flex items-center gap-2 text-black/90 text-base font-bold">
+              <span className="text-xl">&#8592;</span>
+              <span>BACK</span>
+            </button>
 
-            <div className="border-t pt-3">
-              <div className="flex gap-3 items-center">
-                <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-                  SJ
-                </div>
-
-                <div>
-                 <div className="font-medium flex items-center gap-1">
-  <span>Sarah Johnson, 26</span>
-  <img 
-    src="tickmarks.png" 
-    alt="verified" 
-    className="w-4 h-4 inline-block"
-  />
-</div>
-
-                  <div className="text-sm text-gray-600">
-                    Goa, India • ⭐ 4.8
-                  </div>
-
-                  <div className="flex gap-2 mt-1">
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">
-                     <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Featured Trip Agency
-                    </span>
-                    <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
-                      88% Safe
-                    </span>
-                  </div>
-                </div>
+            {/* Left bottom trip text */}
+            <div className="absolute bottom-8 left-6 md:left-10 text-white">
+              <div className="inline-flex items-center px-4 py-1 rounded-full bg-[#F47C7C] text-xs font-semibold uppercase tracking-wide mb-3">
+                Beach &amp; Culture
+              </div>
+              <h1 className="text-sm font-semibold mb-1">
+                Bali Beach & Culture Adventure
+              </h1>
+              <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm text-gray-200 mt-2">
+                <span className="inline-flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Bali, Indonesia
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  13 days
+                </span>
               </div>
             </div>
 
-            <div className="absolute top-90 right-0.5 flex gap-2">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-               <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Browse Trips
-              </button>
-              <button className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
-               <img src="view_profile.png"  alt="verified" className="w-4 h-4 inline-block"/> View Profile
-              </button>
-            </div>
           </div>
         </div>
 
-        <div className="absolute top-24 right-4 flex gap-2">
-          <span className="px-3 py-1 text-white rounded-full text-sm">
-          <img src="Verfied Badge.png" alt="" />
-          </span>
-          <span className="px-3 py-1 bg-red-500 text-white rounded-full text-sm">
-            2 spots left
-          </span>
+        <div className="max-w-6xl mx-auto px-4 md:px-0 mt-12 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <section className="lg:col-span-2 space-y-6">
+            </section>
+            <aside className="lg:col-span-1 flex justify-end" style={{ transform: 'translateX(30px)' }}>
+              <div className="w-72 md:w-80 p-5 md:p-6">
+                <div className="flex flex-col mb-4">
+                  <span className="text-2xl font-semibold text-gray-900">1500</span>
+                  <span className="text-xs text-gray-500">per person</span>
+                </div>
+                <div className="space-y-3 text-sm text-gray-700 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500">Start Date</span>
+                    <span className="font-medium">Nov 15, 2025</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500">End Date</span>
+                    <span className="font-medium">Nov 25, 2025</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500">Duration</span>
+                    <span className="font-medium">13 days</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500">Spots Available</span>
+                    <span className="font-medium text-emerald-500">3 remaining</span>
+                  </div>
+                </div>
+                <button className="w-full mb-3 px-4 py-2.5 bg-[#F47C7C] text-white text-sm font-semibold hover:bg-[#e06d6d]">Join this trip</button>
+                <button className="w-full mb-2 px-4 py-2.5 border border-gray-200 text-sm font-medium text-gray-800 flex items-center justify-center gap-2 hover:bg-gray-50">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span>Chat with Organizer</span>
+                </button>
+                <p className="text-[11px] text-gray-400 text-center mt-1">Free cancellation up to 48 hours before trip start.</p>
+              </div>
+            </aside>
+          </div>
         </div>
-
-      </div>
+      </main>
     </div>
   );
 };
