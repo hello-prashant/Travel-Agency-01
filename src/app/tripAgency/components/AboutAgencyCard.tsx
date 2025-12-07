@@ -1,4 +1,4 @@
-export default function TabNavigation(){
+export default function AboutAgency(){
   return (
     <div className="w-full min-h-80 border border-gray-200 shadow p-4">
       <div className="w-full p-4 flex flex-col gap-3 ">
