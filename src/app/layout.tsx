@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,7 +19,25 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className="antialiased">
         {children}
+=======
+import './globals.css'
+
+export const metadata = {
+  title: 'Trip Roadmap',
+  description: 'Trip Roadmap UI',
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="bg-gray-50 text-gray-800">
+        <div className="min-h-screen py-10 flex justify-center">
+          <main className="w-full container-max px-6">
+            {children}
+          </main>
+        </div>
+>>>>>>> 9b6c7b428e75aefc03a3c83004de6764c3fb42f4
       </body>
     </html>
-  );
+  )
 }
