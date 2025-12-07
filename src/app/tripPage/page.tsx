@@ -1,6 +1,7 @@
 import HeroSection from "./components/HeroSection";
 import DetailedItineraryCard from "@/app/tripPage/components/DetailedItineraryCard";
 import JoinTripCard from "./components/JoinTripCard";
+import TripHighlights from "./components/TripHighlights";
 
 export default function TripPage(){
   return (
@@ -9,7 +10,7 @@ export default function TripPage(){
       <HeroSection />
       <div className="flex flex-row w-full gap-4 px-20 py-10">
         <div className="flex flex-col w-[70%]">
-
+        <TripHighlights />
         <DetailedItineraryCard />
         </div>
         <div className="flex flex-col w-[30%]">

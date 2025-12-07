@@ -1,5 +1,5 @@
 // app/page.tsx
-import TripHighlights from "./components/tripHighlight/TripHighlights"
+import TripHighlights from "./tripPage/components/TripHighlights"
 
 export default function Home() {
   return (

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CheckIcon: React.FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +32,7 @@ const HighlightItem: React.FC<{ text: string }> = ({ text }) => (
 );
 
 // The main component that displays the entire card.
-const App: React.FC = () => {
+const TripHighlights: React.FC = () => {
   // List of all items.
   const highlights: string[] = [
     "Beach activities",
@@ -66,4 +64,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default TripHighlights;
