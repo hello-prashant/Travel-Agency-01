@@ -1,0 +1,77 @@
+'use client'
+import { ReactNode, useState } from "react";
+
+type Props = {
+  children?: ReactNode[];
+}
+
+export default function TabNavigation({children}: Props){
+  const [activeTab, setActiveTab] = useState<number>(0)
+  return (
+    <section>
+    <div className="w-full h-15 p-6 flex flex-row gap-10 bg-gray-100 border-b fixed top-0 left-0">
+      <div className={`inline-flex gap-4 items-center justify-center text-cyan-800 text-lg relative ${activeTab !== 0? "cursor-pointer":"cursor-default"}`}
+        onClick={()=>(setActiveTab(0))}
+      >
+        <span>Upcoming Trips</span>
+        <span className="w-7 h-7 rounded-full block text-center content-center bg-cyan-800 text-white">
+          4
+        </span>
+        {
+          activeTab === 0 &&
+          <span className="w-[80%] h-1.5 bg-cyan-800 absolute rounded-t-full translate-y-[27px] pl-3"></span>
+        }
+      </div>
+
+      <div className={`inline-flex gap-4 items-center justify-center text-cyan-800 text-lg relative ${activeTab !== 1? "cursor-pointer":"cursor-default"}`}
+        onClick={()=>(setActiveTab(1))}
+      >
+        <span>Past Trips</span>
+        <span className="w-7 h-7 rounded-full block text-center content-center bg-cyan-800 text-white">
+          3
+        </span>
+        {
+          activeTab === 1 &&
+          <span className="w-[80%] h-1.5 bg-cyan-800 absolute rounded-t-full translate-y-[27px] px-3"></span>
+        }
+      </div>
+
+      <div className={`inline-flex gap-4 items-center justify-center text-cyan-800 text-lg relative ${activeTab !== 2? "cursor-pointer":"cursor-default"}`}
+        onClick={()=>setActiveTab(2)}
+      >
+        <span>Reviews</span>
+        <span className="w-7 h-7 rounded-full block text-center content-center bg-cyan-800 text-white">
+          6
+        </span>
+        {
+          activeTab === 2 &&
+          <span className="w-[80%] h-1.5 bg-cyan-800 absolute rounded-t-full translate-y-[27px] px-3 "></span>
+        }
+      </div>
+
+      <div className={`inline-flex gap-4 items-center justify-center text-cyan-800 text-lg relative ${activeTab !== 3? "cursor-pointer":"cursor-default"}`}
+        onClick={()=>setActiveTab(3)}
+      >
+        <span>Travel Photos</span>
+        <span className="w-7 h-7 rounded-full block text-center content-center bg-cyan-800 text-white">
+          11
+        </span>
+        {
+          activeTab === 3 &&
+          <span className="w-[80%] h-1.5 bg-cyan-800 absolute rounded-t-full translate-y-[27px] px-3"></span>
+        }
+      </div>
+    </div>
+
+    <div className="w-full min-h-full mt-15">
+      { 
+        Array.isArray(children) && children.length>0 ?
+          children[activeTab] :
+          <></>
+      }
+    </div>    
+    </section>
+  )
+}
+
+// Todo: implement motion animation with active tab indicator
