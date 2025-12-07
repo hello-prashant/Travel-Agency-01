@@ -1,7 +1,7 @@
 export default function JoinTripCard() {
   return (
-    <aside className="flex justify-center border border-gray-500 rounded-lg" style={{ transform: 'translateX(30px)' }}>
-      <div className="w-72 md:w-full p-5 md:p-6">
+    <aside className="flex justify-center border-2 border-gray-300 rounded-lg">
+      <div className="min-w-[320px] w-90 p-5 md:p-6">
         <div className="flex flex-col mb-4">
           <span className="text-2xl font-semibold text-gray-900">1500</span>
           <span className="text-xs text-gray-500">per person</span>
