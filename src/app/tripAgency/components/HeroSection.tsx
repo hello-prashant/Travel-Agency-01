@@ -5,18 +5,18 @@ import { TbLuggage } from "react-icons/tb";
 
 export default function HeroSection(){
   return (
-    <div className="w-full h-1/2">
-      <div className="w-full h-65">        
+    <div className="w-full h-1/2 shadow ">
+      <div className="w-full h-65 ">        
         <img src="/hero-cover-img.jpg" alt="Cover Picture" 
         className="object-cover w-full h-full "/>
       </div>
-      <div className="w-full p-6 flex flex-row">
-        <div className="w-80 h-65  -translate-y-28">
+      <div className="w-full p-6 min-h-45 flex flex-row relative">
+        <div className="w-70 h-65 absolute -top-28 ">
           <img src="/hero-profile-pic.jpg" alt="" 
-          className="object-fill w-full h-full"/>
+          className="object-fill w-full h-full shadow-lg"/>
         </div>
 
-        <div className="w-full flex flex-row justify-between">
+        <div className="w-full flex flex-row justify-between ml-70" >
           <div className="flex flex-col gap-4 pl-6">
             <div className="flex flex-row gap-3">
               <h2 className='text-xl font-bold '>Wanderlust Adventures</h2> 
@@ -32,12 +32,14 @@ export default function HeroSection(){
               <FaMapMarkerAlt fill='black' className='text-white'/>
               <p className='text-gray-400'> Bali, Indonesia</p>
             </div>
-            <div className="inline-flex gap-1 items-center">
-              <FaStar fill="yellow" strokeWidth={0} height={20} />
-              <FaStar fill="yellow" strokeWidth={0} height={20} />
-              <FaStar fill="yellow" strokeWidth={0} height={20} />
-              <FaStar fill="yellow" strokeWidth={0} height={20} />
-              <FaStarHalfAlt fill="yellow" strokeWidth={0} height={20} />
+            <div className="inline-flex gap-4 items-center">
+              <div className="inline-flex gap-1.5 items-center">
+                <FaStar fill="yellow" strokeWidth={0} height={20} />
+                <FaStar fill="yellow" strokeWidth={0} height={20} />
+                <FaStar fill="yellow" strokeWidth={0} height={20} />
+                <FaStar fill="yellow" strokeWidth={0} height={20} />
+                <FaStarHalfAlt fill="yellow" strokeWidth={0} height={20} />
+              </div>
 
               <span className='text-sm text-gray-400'>4.5 (202 reviews)</span>
               <span className='inline-flex items-center bg-amber-500/20 rounded-full py-1 px-2 text-sm text-amber-600'>
