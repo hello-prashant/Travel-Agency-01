@@ -9,11 +9,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-gray-50 text-gray-800">
-        <div className="min-h-screen py-10 flex justify-center">
-          <main className="w-full container-max px-6">
-            {children}
-          </main>
-        </div>
+        <main className="w-full container-max px-6">
+          {children}
+        </main>
       </body>
     </html>
   );
