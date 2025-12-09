@@ -2,7 +2,12 @@ import { BsPeopleFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
 
-export default function TripCard({trip}:any) {
+type Props = {
+  trip: any,
+  past?: boolean
+}
+
+export default function TripCard({trip, past}:Props) {
   return (
     <div className="w-full h-50 md:h-60 border border-gray-100 shadow p-4 md:gap-6 flex flex-row gap-4">
       <div className="w-1/3 md:w-1/4 h-full">
@@ -16,7 +21,9 @@ export default function TripCard({trip}:any) {
         <div className="flex flex-row gap-4 text-sm text-gray-600">
           <span className="inline-flex items-center gap-1"> <FaMapMarkerAlt fill='black'/> {trip.destination}</span>
           <span className="inline-flex items-center gap-1"> <MdDateRange fill="black"/> {trip.date}</span>
-          <span className="inline-flex items-center gap-1"> <BsPeopleFill fill="black"/> {trip.joined}/{trip.groupSize} joined</span>
+          <span className="inline-flex items-center gap-1"> <BsPeopleFill fill="black"/>
+           {trip.joined}/{trip.groupSize} joined
+          </span>
         </div>
 
         <div className="flex flwx-row items-center relative w-full h-8 md:h-10">
@@ -30,7 +37,10 @@ export default function TripCard({trip}:any) {
             <></>
           }
 
-          <span className="inline-flex items-center gap-1 text-gray-600 text-sm"> {trip.joined}/{trip.groupSize} joined</span>
+          <span className="inline-flex items-center gap-1 text-gray-600 text-sm"> 
+            {past ? `${trip.groupSize} travelers `: `${trip.joined}+'/'+${trip.groupSize}` } 
+            joined
+          </span>
         </div>
 
         <div className="w-full inline-flex items-center gap-4 ">
