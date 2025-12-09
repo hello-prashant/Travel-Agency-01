@@ -3,6 +3,7 @@ import AboutAgency from "./components/AboutAgencyCard"
 import StatsCard from "./components/StatsCard"
 import TrustSafetyCard from "./components/TrustSafetyCard"
 import TabNavigation from "./components/TabNavigation"
+import UpcommingTrips from "./components/UpcommingTrips";
 
 export default function TripAgency(){
   return (
@@ -14,6 +15,7 @@ export default function TripAgency(){
           <StatsCard />
           <AboutAgency />
           <TabNavigation />
+          <UpcommingTrips />
         </div>
         <div className="w-[30%] relative">
           <TrustSafetyCard />
@@ -22,4 +24,5 @@ export default function TripAgency(){
     </section>
   )
 }
+
 
