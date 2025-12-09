@@ -2,6 +2,8 @@ import { BsPeopleFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
 
+import trips from "../data";
+
 type Props = {
   trips: any[]
 }
@@ -37,20 +39,26 @@ function TripCard({trip}:any) {
         </div>
 
         <div className="flex flwx-row items-center relative w-full h-8 md:h-10">
-          <img src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww" alt="Traveler image" 
-          loading="lazy"
-          className="w-8 md:w-10 h-full object-cover rounded-full border-2 border-white "
-          />
+          {Array.isArray(trip.memberImgUrl) && trip.memberImgUrl.length > 0?
+            trip.memberImgUrl.map((src: string, idx: number)=>(
+            <img key={idx} src={src} alt="Traveler image" 
+              loading="lazy"
+              className={`w-8 md:w-10 h-full object-cover rounded-full border-2 border-white -translate-x-${idx*2}`}
+            />
+          )) :
+            <></>
+          }
+          
 
-          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww" alt="Traveler image" 
+          {/* <img src="" alt="Traveler image" 
           loading="lazy"
           className="w-8 md:w-10 h-full object-cover rounded-full border-2 border-white -translate-x-2"
           />
 
-          <img src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fHww" alt="Traveler image" 
+          <img src="" alt="Traveler image" 
           loading="lazy"
           className="w-8 md:w-10 h-full object-cover rounded-full border-2 border-white -translate-x-4"
-          />
+          /> */}
 
           <span className="inline-flex items-center gap-1 text-gray-600 text-sm"> {trip.joined}/{trip.groupSize} joined</span>
         </div>
@@ -69,29 +77,3 @@ function TripCard({trip}:any) {
   )
 }
 
-var trips = [
-  {
-    title: 'Bali Beach & Culture Adventure',
-    imageUrl: '/bali-beach-img.jpg',
-    destination: 'Bali, Indonesia',
-    date: 'Nov 3 - Nov 10, 2025',
-    groupSize: '6',
-    joined: '3',
-  },
-  {
-    title: 'Northern Lights in Iceland',
-    imageUrl: '/northern-lights-img.jpg',
-    destination: 'Reykjavik, Iceland',
-    date: 'Jan 15 - Jan 22, 2026',
-    groupSize: '6',
-    joined: '3',
-  },
-  {
-    title: 'Bali Beach & Culture Adventure',
-    imageUrl: '/bali-beach-img.jpg',
-    destination: 'Bali, Indonesia',
-    date: 'Nov 3 - Nov 10, 2025',
-    groupSize: '6',
-    joined: '3',
-  },
-]
