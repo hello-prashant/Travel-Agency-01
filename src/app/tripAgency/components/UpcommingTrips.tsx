@@ -48,17 +48,6 @@ function TripCard({trip}:any) {
           )) :
             <></>
           }
-          
-
-          {/* <img src="" alt="Traveler image" 
-          loading="lazy"
-          className="w-8 md:w-10 h-full object-cover rounded-full border-2 border-white -translate-x-2"
-          />
-
-          <img src="" alt="Traveler image" 
-          loading="lazy"
-          className="w-8 md:w-10 h-full object-cover rounded-full border-2 border-white -translate-x-4"
-          /> */}
 
           <span className="inline-flex items-center gap-1 text-gray-600 text-sm"> {trip.joined}/{trip.groupSize} joined</span>
         </div>
