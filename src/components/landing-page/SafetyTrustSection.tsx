@@ -81,7 +81,7 @@ const SafetyTrustSection: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center justify-center lg:ml-10 "> 
           {/* Features Grid */}
-          <div className="relative grid grid-cols-2 sm:grid-cols-2 lg:gap-20 gap-5 flex justify-center items-center ">
+          <div className="relative grid grid-cols-2 sm:grid-cols-2 lg:gap-20 gap-5 justify-center items-center ">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -107,7 +107,7 @@ const SafetyTrustSection: React.FC = () => {
           {/* Image Section */}
           <div className=" relative group flex justify-center items-center  ">
             <div 
-              className="w-98 sm:w-[65%]  overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+              className=" sm:w-[65%]  overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
               style={{
                 borderRadius: '100px 0px 100px 0',
               }}
@@ -117,7 +117,7 @@ const SafetyTrustSection: React.FC = () => {
                 alt="Beautiful mountain lake with turquoise water and boats"
                 className="w-full  h-[520px] object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             
             {/* Floating Badge */}
