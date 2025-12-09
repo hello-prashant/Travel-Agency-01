@@ -3,7 +3,7 @@ import AboutAgency from "./components/AboutAgencyCard"
 import StatsCard from "./components/StatsCard"
 import TrustSafetyCard from "./components/TrustSafetyCard"
 import TabNavigation from "./components/TabNavigation"
-import UpcommingTrips from "./components/UpcommingTrips";
+import UpcomingTrips from "./components/UpcomingTrips";
 import PastTrips from "./components/PastTrips";
 
 export default function TripAgency(){
@@ -15,9 +15,11 @@ export default function TripAgency(){
         <div className="w-[70%] flex flex-col gap-4 ">
           <StatsCard />
           <AboutAgency />
-          <TabNavigation />
-          <UpcommingTrips />
-          <PastTrips />
+          <TabNavigation children={[
+            <UpcomingTrips key={0}/>, 
+            <PastTrips key={1}/>,
+          ]}/>
+          
         </div>
         <div className="w-[30%] relative">
           <TrustSafetyCard />

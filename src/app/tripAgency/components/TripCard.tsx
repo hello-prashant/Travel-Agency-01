@@ -10,7 +10,7 @@ type Props = {
 export default function TripCard({trip, past}:Props) {
   return (
     <div className="w-full h-50 md:h-60 border border-gray-100 shadow p-4 md:gap-6 flex flex-row gap-4">
-      <div className="w-1/3 md:w-1/4 h-full">
+      <div className="w-1/3 md:w-[45%] h-full">
         <img src={trip.imageUrl} alt={trip.title} 
         className='object-cover h-full w-full'/>
       </div>
