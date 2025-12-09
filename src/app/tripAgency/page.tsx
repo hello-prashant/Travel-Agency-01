@@ -9,8 +9,8 @@ export default function TripAgency(){
     <section
     className="w-full min-h-svh flex flex-col gap-4 p-6">
       <HeroSection />
-      <div className="w-full flex flex-row gap-6">
-        <div className="w-[70%] flex flex-col gap-4 pt-6">
+      <div className="w-full flex flex-row gap-6 pt-6">
+        <div className="w-[70%] flex flex-col gap-4 ">
           <StatsCard />
           <AboutAgency />
           <TabNavigation />

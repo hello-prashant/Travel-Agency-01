@@ -1,6 +1,6 @@
 export default function StatsCard(){
   return (
-    <div className="w-full min-h-50 flex flex-row gap-6 px-4">
+    <div className="w-full min-h-40 flex flex-row gap-6 px-4">
       <div className="w-full flex flex-col shadow justify-center items-center text-5xl text-cyan-900 font-bold border border-gray-50">
         450+
         <span className="text-base text-gray-500 font-normal">
