@@ -5,6 +5,7 @@ import TrustSafetyCard from "./components/TrustSafetyCard"
 import TabNavigation from "./components/TabNavigation"
 import UpcomingTrips from "./components/UpcomingTrips";
 import PastTrips from "./components/PastTrips";
+import ContactInfoCard from "./components/ContactInfoCard"
 
 export default function TripAgency(){
   return (
@@ -22,6 +23,7 @@ export default function TripAgency(){
           
         </div>
         <div className="w-[30%] relative">
+          <ContactInfoCard />
           <TrustSafetyCard />
         </div>
       </div>
