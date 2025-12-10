@@ -3,7 +3,7 @@ import ProfileHeader from '@/app/profile/components/common/ProfileHeader'
 import AboutSection from '@/app/profile/components/common/AboutSection'
 import ProfileTabs from '@/app/profile/components/common/ProfileTabs'
 import { TravelerData } from '@/types/profile'
-
+import SimilarTravelers from '@/app/profile/components/cards/SimilarTravelers'
 const travelerData: TravelerData = {
   name: 'Jane Cooper',
   isVerified: true,
@@ -34,6 +34,9 @@ export default function TravelerProfile() {
             
             <div className="lg:col-span-2">
               <ProfileTabs />
+            </div>
+            <div className="lg:col-span-1 w-7xl">
+              <SimilarTravelers />
             </div>
           </div>
         </div>
