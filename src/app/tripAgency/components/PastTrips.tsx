@@ -1,6 +1,5 @@
 import TripCard from './TripCard';
-
-import trips from "../data0";
+import trips from '../data/past';
 
 type Props = {
   trips: any[]
