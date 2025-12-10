@@ -1,12 +1,16 @@
 
 // components/TripOverview.jsx
 'use client'
-import { FaMapMarkerAlt, FaCalendarAlt, FaWallet, FaUserFriends, FaCar, FaGlobe, FaUtensils, FaUserAlt } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaCalendarAlt, FaWallet, FaUserFriends, FaCarSide, FaGlobe, FaUtensils, FaUserAlt } from 'react-icons/fa'
+import { FaTransgender } from "react-icons/fa6";
+import { MdRoute, MdNoMeals } from "react-icons/md";
+import { BsPeopleFill, BsGlobe } from "react-icons/bs";
+
 export default function TripOverview({ trip }: { trip: any }) {
   const t = trip || {}
 
   return (
-    <section className="bg-white rounded-lg shadow-sm border p-6">
+    <section className="bg-white rounded-lg shadow border border-gray-300 p-6 pb-0">
 
       {/* Header */}
       <div className="mb-6">
@@ -16,15 +20,15 @@ export default function TripOverview({ trip }: { trip: any }) {
 
       {/* Top cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <div className="bg-gray-50 border  p-4 h-28 flex flex-col justify-between border-black">
+        <div className="bg-gray-50 p-4 h-25 flex flex-col justify-between ">
           <div className="flex items-center gap-2">
-            <FaMapMarkerAlt className="text-gray-700 text-lg" />
+            <MdRoute className="text-gray-700 text-lg" />
             <span className="text-xs font-semibold text-gray-600">Route</span>
           </div>
           <div className="text-sm font-medium text-gray-800 leading-tight">{t.route}</div>
         </div>
 
-        <div className="bg-gray-50 border p-4 h-28 flex flex-col justify-between border-black">
+        <div className="bg-gray-50 p-4 h-25 flex flex-col justify-between ">
           <div className="flex items-center gap-2">
             <FaCalendarAlt className="text-gray-700 text-lg" />
             <span className="text-xs font-semibold text-gray-600">Dates</span>
@@ -32,7 +36,7 @@ export default function TripOverview({ trip }: { trip: any }) {
           <div className="text-sm font-medium text-gray-800">{t.dates}</div>
         </div>
 
-        <div className="bg-gray-50 border  p-4 h-28 flex flex-col justify-between border-black">
+        <div className="bg-gray-50 p-4 h-25 flex flex-col justify-between ">
           <div className="flex items-center gap-2">
             <FaWallet className="text-gray-700 text-lg" />
             <span className="text-xs font-semibold text-gray-600">Budget</span>
@@ -40,9 +44,9 @@ export default function TripOverview({ trip }: { trip: any }) {
           <div className="text-sm font-medium text-gray-800">{t.budget}</div>
         </div>
 
-        <div className="bg-gray-50 border  p-4 h-28 flex flex-col justify-between border-black">
+        <div className="bg-gray-50 p-4 h-25 flex flex-col justify-between ">
           <div className="flex items-center gap-2">
-            <FaUserFriends className="text-gray-700 text-lg" />
+            <BsPeopleFill className="text-gray-700 text-lg" />
             <span className="text-xs font-semibold text-gray-600">Travelers</span>
           </div>
           <div className="text-sm font-medium text-gray-800">{t.travelers}</div>
@@ -56,8 +60,8 @@ export default function TripOverview({ trip }: { trip: any }) {
         <div className="space-y-6">
 
           {/* Group Size */}
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-            <FaUserFriends className="text-2xl text-gray-800" />
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
+            <BsPeopleFill className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Group Size</div>
               <div className="text-lg font-semibold text-gray-900">{t.groupSize}</div>
@@ -65,8 +69,8 @@ export default function TripOverview({ trip }: { trip: any }) {
           </div>
 
           {/* Travel Style */}
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-            <FaCar className="text-2xl text-gray-800" />
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
+            <FaCarSide className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Travel Style</div>
               <div className="text-lg font-semibold text-gray-900">{t.travelStyle}</div>
@@ -74,8 +78,8 @@ export default function TripOverview({ trip }: { trip: any }) {
           </div>
 
           {/* Language */}
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-            <FaGlobe className="text-2xl text-gray-800" />
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
+            <BsGlobe className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Language</div>
               <div className="text-lg font-semibold text-gray-900">{t.language}</div>
@@ -83,8 +87,8 @@ export default function TripOverview({ trip }: { trip: any }) {
           </div>
 
           {/* Looking For */}
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-            <FaUserAlt className="text-2xl text-gray-800" />
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
+            <FaTransgender className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Looking For</div>
               <div className="text-lg font-semibold text-gray-900">{t.lookingFor}</div>
@@ -97,8 +101,8 @@ export default function TripOverview({ trip }: { trip: any }) {
         <div className="space-y-6">
 
           {/* Trip Style */}
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-            <FaCar className="text-2xl text-gray-800" />
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
+            <FaCarSide className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Trip Style</div>
               <div className="text-lg font-semibold text-gray-900">{t.tripStyle}</div>
@@ -106,35 +110,26 @@ export default function TripOverview({ trip }: { trip: any }) {
           </div>
 
           {/* Duration */}
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
             <FaCalendarAlt className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Duration</div>
               <div className="text-lg font-semibold text-gray-900">{t.duration}</div>
             </div>
           </div>
-
-          {/* Split Costs
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-            <FaMoneyBillWave className="text-2xl text-gray-800" />
+            
+          {/* Split Costs */}
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
+            <FaWallet className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Split Costs</div>
               <div className="text-lg font-semibold text-gray-900">{t.splitCosts}</div>
             </div>
-          </div> */}
-            
-{/* Split Costs */}
-<div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-  <FaWallet className="text-2xl text-gray-800" />
-  <div>
-    <div className="text-xs text-gray-500">Split Costs</div>
-    <div className="text-lg font-semibold text-gray-900">{t.splitCosts}</div>
-  </div>
-</div>
+          </div>
 
           {/* Food Preference */}
-          <div className="bg-gray-50 border rounded-lg p-4 flex items-center gap-4">
-            <FaUtensils className="text-2xl text-gray-800" />
+          <div className="borderrounded-lg p-4 flex items-center gap-4">
+            <MdNoMeals className="text-2xl text-gray-800" />
             <div>
               <div className="text-xs text-gray-500">Food Preference</div>
               <div className="text-lg font-semibold text-gray-900">{t.foodPref}</div>
