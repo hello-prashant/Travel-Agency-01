@@ -1,6 +1,3 @@
-//src/app/JoinedTravelers/components/TravelerCard.tsx
-"use client";
-import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { BsShieldFillCheck } from "react-icons/bs";
 
@@ -34,13 +31,13 @@ const travelers = [
 
 export default function TravelerCard() {
   return (
-    <div className="bg-white border rounded-lg w-full max-w-md mx-auto shadow-sm">
+    <div className="bg-white border-2 border-gray-300 rounded-lg min-w-[320px] w-90 max-w-md h-75 shadow p-4">
       
       {/* Title */}
-      <div className="px-5 py-4 border-b">
-        <h3 className="text-sm font-semibold text-black">
+      <div >
+        <h2 className="text-xl font-semibold text-black">
           Joined Travelers ({travelers.length})
-        </h3>
+        </h2>
       </div>
 
       {/* List */}
@@ -48,7 +45,7 @@ export default function TravelerCard() {
         {travelers.map((t) => (
           <div
             key={t.id}
-            className="px-5 py-4 flex items-center justify-between border-b last:border-none"
+            className="px-3 py-4 flex items-center justify-between last:border-none"
           >
             <div className="flex items-center gap-4">
               
@@ -87,13 +84,13 @@ export default function TravelerCard() {
 
                 {/* Rating + BB% */}
                 <div className="flex items-center gap-4 mt-1 text-xs text-black">
-                  <div className="flex items-center gap-1">
-                    <AiFillStar className="text-yellow-400" />
+                  <div className="inline-flex items-center gap-1">
+                    <AiFillStar className="text-yellow-400 w-4 h-4" />
                     <span>{t.rating}</span>
                   </div>
 
                   <div className="flex items-center gap-1">
-                    <BsShieldFillCheck className="text-gray-500" />
+                    <BsShieldFillCheck className="text-white fill-green-500" />
                     <span>{t.bb}%</span>
                   </div>
                 </div>
@@ -101,7 +98,7 @@ export default function TravelerCard() {
             </div>
 
             {/* View Button */}
-            <button className="px-4 py-2 bg-black text-white  text-sm">
+            <button className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm rounded">
               View
             </button>
           </div>
