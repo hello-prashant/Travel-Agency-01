@@ -8,7 +8,7 @@ type Props = {
 export default function TabNavigation({children}: Props){
   const [activeTab, setActiveTab] = useState<number>(0)
   return (
-    <section className="max-h-full relative">
+    <section className="max-h-screen relative shadow">
     <div className="w-full h-15 p-6 flex flex-row gap-10 bg-gray-200 border-b absolute top-0 left-0">
       <div className={`inline-flex gap-4 items-center justify-center text-cyan-900 text-lg relative ${activeTab !== 0? "cursor-pointer":"cursor-default"}`}
         onClick={()=>(setActiveTab(0))}
@@ -63,7 +63,7 @@ export default function TabNavigation({children}: Props){
       </div>
     </div>
 
-    <div className="w-full min-h-full mt-15 p-6">
+    <div className="w-full h-full mt-15 p-6 overflow-y-scroll">
       { 
         Array.isArray(children) && children.length>0 ?
           children[activeTab] :

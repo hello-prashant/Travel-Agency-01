@@ -1,4 +1,4 @@
-const trips = [
+export default [
   {
     title: 'Kerala Tourism',
     imageUrl: '/kerala-img.avif',
@@ -41,5 +41,3 @@ const trips = [
     ]
   },
 ]
-
-export default trips;

@@ -22,7 +22,7 @@ export default function TripAgency(){
           ]}/>
           
         </div>
-        <div className="w-[30%] relative">
+        <div className="w-[30%] flex flex-col gap-4">
           <ContactInfoCard />
           <TrustSafetyCard />
         </div>

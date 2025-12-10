@@ -1,6 +1,6 @@
 export default function ContactInfoCard(){
   return (
-    <div className="w-full min-h-80 border border-gray-200 shadow p-4 flex flex-col gap-4">
+    <div className="w-full min-h-80 border border-gray-200 shadow p-6 flex flex-col gap-4">
       <h2 className="text-lg font-semibold ">Contact Information</h2>
       <div className="">
         <p className="text-sm text-gray-600">Response Time</p>

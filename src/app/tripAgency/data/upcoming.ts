@@ -1,4 +1,4 @@
-const trips = [
+export default [
   {
     title: 'Bali Beach & Culture Adventure',
     imageUrl: '/bali-beach-img.jpg',
@@ -39,5 +39,3 @@ const trips = [
     ]
   },
 ]
-
-export default trips;
