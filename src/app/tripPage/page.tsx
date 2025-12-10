@@ -5,6 +5,7 @@ import SafetyInfoCard from "./components/SafetyInfoCard"
 import CancellationCard from "./components/CancellationCard";
 import TripLeaderCard from "./components/TripLeaderCard";
 import TripHighlightsCard from "./components/TripHighlightsCard";
+import TravelerCard from "./components/TravelerCard";
 
 export default function TripPage(){
   return (
@@ -21,6 +22,7 @@ export default function TripPage(){
         <div className="flex flex-col w-[30%] gap-8 items-center">
           <JoinTripCard />
           <TripLeaderCard />
+          <TravelerCard />
         </div>
       </div>
     
