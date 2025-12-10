@@ -6,6 +6,8 @@ import CancellationCard from "./components/CancellationCard";
 import TripLeaderCard from "./components/TripLeaderCard";
 import TripHighlightsCard from "./components/TripHighlightsCard";
 import TravelerCard from "./components/TravelerCard";
+import TripOverview from "./components/TripOverviewCard"
+import trip from "./data/trip"
 
 export default function TripPage(){
   return (
@@ -14,6 +16,7 @@ export default function TripPage(){
       <HeroSection />
       <div className="flex flex-row w-full gap-10 px-20 py-10">
         <div className="flex flex-col w-[70%] gap-8 items-center">
+          <TripOverview trip={trip} />
           <TripHighlightsCard />
           <DetailedItineraryCard />
           <SafetyInfoCard />
@@ -27,6 +30,6 @@ export default function TripPage(){
       </div>
     
     </section>
-
   )
+
 }
