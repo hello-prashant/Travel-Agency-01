@@ -8,6 +8,7 @@ import TripHighlightsCard from "./components/TripHighlightsCard";
 import TravelerCard from "./components/TravelerCard";
 import TripOverview from "./components/TripOverviewCard"
 import TripRoadmapCard from "./components/TripRoadmapCard";
+import ShareTripCard from "./components/SharetripCard";
 import trip from "./data/trip"
 
 export default function TripPage(){
@@ -28,6 +29,7 @@ export default function TripPage(){
           <TripLeaderCard />
           <TravelerCard />
           <TripRoadmapCard />
+          <ShareTripCard />
         </div>
       </div>
     
