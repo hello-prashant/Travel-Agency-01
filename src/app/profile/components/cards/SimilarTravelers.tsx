@@ -22,6 +22,39 @@ export default function SimilarTravelers() {
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const router = useRouter();
 
+    const getColor = (safetyPercentage: string) => {
+        const percentage = parseInt(safetyPercentage.replace('% Safe', ''));
+        if (percentage <= 50) {
+            return 'bg-red-50 text-red-600 border-red-100';
+        } else if (percentage <= 80) {
+            return 'bg-yellow-50 text-yellow-700 border-yellow-100';
+        } else {
+            return 'bg-green-50 text-green-600 border-green-100';
+        }
+    };
+
+    const getmatchColor = (match: string) => {
+        const percentage = parseInt(match.replace('% Safe', ''));
+        if (percentage <= 50) {
+            return 'bg-red-500 text-red-600 border-red-100';
+        } else if (percentage <= 70) {
+            return 'bg-yellow-400 text-yellow-700 border-yellow-100';
+        } else {
+            return 'bg-green-500 text-green-600 border-green-100';
+        }
+    };
+
+    const getspotsColor = (spotsLeft: string) => {
+        const number = parseInt(spotsLeft.replace('% Safe', ''));
+        if (number <= 5) {
+            return 'bg-red-500 text-red-600 border-red-100';
+        } else if (number <= 10) {
+            return 'bg-yellow-400 text-yellow-700 border-yellow-100';
+        } else {
+            return 'bg-green-500 text-green-600 border-green-100';
+        }
+    };
+
     const handleLikeToggle = (index: number) => {
         const newLiked = [...isLiked];
         newLiked[index] = !newLiked[index];
@@ -56,7 +89,7 @@ export default function SimilarTravelers() {
             price: '₹45,000/ person',
             tripId: 'tropical-island-getaway-maldives',
             match: '50%',
-            spotsLeft: '2 spots left',
+            spotsLeft: '8 spots left',
             tripsCompleted: '25 Trips Completed',
             host: {
                 initials: 'PS',
@@ -79,7 +112,7 @@ export default function SimilarTravelers() {
             price: '₹35,000/ person',
             tripId: 'mountain-adventure-himalayas',
             match: '75%',
-            spotsLeft: '1 spot left',
+            spotsLeft: '15 spot left',
             tripsCompleted: '42 Trips Completed',
             host: {
                 initials: 'RK',
@@ -102,7 +135,7 @@ export default function SimilarTravelers() {
             price: '₹28,000/ person',
             tripId: 'cultural-heritage-rajasthan',
             match: '65%',
-            spotsLeft: '3 spots left',
+            spotsLeft: '2 spots left',
             tripsCompleted: '18 Trips Completed',
             host: {
                 initials: 'AS',
@@ -118,7 +151,7 @@ export default function SimilarTravelers() {
 
     return (
         <div className="w-full bg-gray-50 p-4 font-sans">
-            <div className="max-w-7xl mx-auto">
+            <div className="w-full mx-auto">
                 <h1 className="text-2xl font-bold text-gray-900 mb-6">Similar Travellers</h1>
                 
                 <div className="relative">
@@ -159,10 +192,10 @@ export default function SimilarTravelers() {
                                                         </p>
                                                     </div>
                                                     <div className="flex items-center gap-2 shrink-0">
-                                                        <span className="bg-green-500 text-white text-xs font-bold px-3 py-1">
+                                                        <span className={`border text-white text-xs font-bold px-3 py-1 ${getmatchColor(card.match)}`}>
                                                             {card.match} Match
                                                         </span>
-                                                        <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 flex items-center gap-1">
+                                                        <span className={`border text-white text-xs font-bold px-3 py-1 flex items-center gap-1 ${getspotsColor(card.spotsLeft)}`}>
                                                             <span className="w-2 h-2 bg-white animate-pulse"></span>
                                                             {card.spotsLeft}
                                                         </span>
@@ -220,7 +253,6 @@ export default function SimilarTravelers() {
                                                             <span className="font-bold text-gray-900">{card.host.name}, {card.host.age}</span>
                                                             <CheckCircle2 className="w-4 h-4 text-green-500 fill-green-500 text-white" />
                                                         </div>
-
                                                         <div className="flex items-center gap-2 text-xs text-gray-500">
                                                             <span>{card.host.location}</span>
                                                             <span className="w-1 h-1 bg-gray-300"></span>
@@ -229,13 +261,12 @@ export default function SimilarTravelers() {
                                                                 {card.host.rating}
                                                             </div>
                                                         </div>
-
                                                         <div className="flex items-center gap-2">
                                                             <div className="flex items-center gap-1 text-[10px] font-medium text-blue-600 bg-blue-50 px-1.5 py-0.5">
                                                                 <User className="w-3 h-3" />
                                                                 {card.host.type}
                                                             </div>
-                                                            <div className="flex items-center gap-1 text-[10px] font-medium text-yellow-700 bg-yellow-50 px-1.5 py-0.5 border border-yellow-100">
+                                                            <div className={`flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 border ${getColor(card.host.safety)}`}>
                                                                 <ShieldCheck className="w-3 h-3" />
                                                                 {card.host.safety}
                                                             </div>
