@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 flex w-full max-w-5xl flex-col items-center px-4 py-10 text-center">
+      <div className="relative z-5 flex w-full max-w-5xl flex-col items-center px-4 py-10 text-center">
         {/* Small badge */}
         <button className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur hover:bg-white/20 transition">
           <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
