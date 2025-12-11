@@ -20,7 +20,7 @@ export default function HeroSection(){
           <div className="flex flex-col gap-4 pl-6">
             <div className="flex flex-row gap-3">
               <h2 className='text-xl font-bold '>Wanderlust Adventures</h2> 
-              <div className="px-2.5 py-1 text-sm font-semibold text-gray-200 rounded-full bg-green-500 inline-flex gap-1">
+              <div className="px-2 py-1 text-sm font-semibold text-gray-200 rounded-full bg-green-500 inline-flex gap-1">
                 <span className='w-5 h-5 rounded-full bg-green-600 text-gray-200 flex justify-center items-center'>
                   <FaCheck height={14}/>
                 </span>
@@ -30,7 +30,7 @@ export default function HeroSection(){
           
             <div className="inline-flex gap-2 items-center">
               <FaMapMarkerAlt fill='black' className='text-white'/>
-              <p className='text-gray-400'> Bali, Indonesia</p>
+              <p className='text-gray-500'> Bali, Indonesia</p>
             </div>
             <div className="inline-flex gap-4 items-center">
               <div className="inline-flex gap-1.5 items-center">
@@ -41,7 +41,7 @@ export default function HeroSection(){
                 <FaStarHalfAlt fill="yellow" strokeWidth={0} height={20} />
               </div>
 
-              <span className='text-sm text-gray-400'>4.5 (202 reviews)</span>
+              <span className='text-sm text-gray-500'>4.5 (202 reviews)</span>
               <span className='inline-flex items-center bg-amber-500/20 rounded-full py-1 px-2 text-sm text-amber-600'>
                 <FaShieldAlt height={16} />
                 70% safe

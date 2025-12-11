@@ -10,10 +10,10 @@ import ContactInfoCard from "./components/ContactInfoCard"
 export default function TripAgency(){
   return (
     <section
-    className="w-full min-h-svh flex flex-col gap-4 p-6">
+    className="w-full min-h-svh flex flex-col gap-4">
       <HeroSection />
-      <div className="w-full flex flex-row gap-6 pt-6">
-        <div className="w-[70%] flex flex-col gap-4 ">
+      <div className="w-full flex flex-row gap-6 p-6">
+        <div className="w-[70%] flex flex-col gap-6 ">
           <StatsCard />
           <AboutAgency />
           <TabNavigation children={[
