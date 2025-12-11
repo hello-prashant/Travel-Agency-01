@@ -24,7 +24,7 @@ export default function TripPage(){
           <SafetyInfoCard />
           <CancellationCard />
         </div>
-        <div className="flex flex-col w-[30%] gap-8 items-center">
+        <div className="flex flex-col w-[30%] gap-7 items-center">
           <JoinTripCard />
           <TripLeaderCard />
           <TravelerCard />
