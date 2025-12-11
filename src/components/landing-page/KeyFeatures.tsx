@@ -1,52 +1,52 @@
-'use client';
+"use client"
+
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const KeyFeatures: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-        const sectionRef = useRef<HTMLDivElement>(null);
-      
-        useEffect(() => {
-          const observer = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting) {
-                setIsVisible(true);
-              }
-            },
-            { threshold: 0.2 }
-          );
-      
-          if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-          }
-      
-          return () => {
-            if (sectionRef.current) {
-              observer.unobserve(sectionRef.current);
-            }
-          };
-        }, []);
-  return (
-    <section className="w-full bg-[#F7F9FF]  py-16">
-      <div className="mx-auto flex max-w-7xl flex-col px-4">
-        {/* CENTERED HEADING */}
-        <div className="flex flex-col items-center">
-          <div className="group inline-flex flex-col items-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-gray-900 text-center">
-              Key Features
-            </h2>
-            {/* underline from center */}
- <div ref={sectionRef} className="z-10 w-50 h-1 bg-gray-200 mx-auto mb-2 overflow-hidden m-5">
 
-           <div
+
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  //Trigger underline animation on scroll into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="w-full bg-white py-16">
+      <div className="mx-auto flex max-w-6xl flex-col px-4">
+        
+        {/* CENTERED HEADING */}
+        {/* TITLE */}
+      <div ref={sectionRef} className="text-center mb-14 px-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+          Key Features
+        </h2>
+
+        {/* UNDERLINE ANIMATION FIXED */}
+        <div
           className={`h-[5px] bg-linear-to-r from-teal-400 to-teal-900 mx-auto transition-all duration-700 ${
-            isVisible ? "w-full" : "w-0"
+            visible ? "w-75 sm:w-32 md:w-80" : "w-0"
           }`}
         />
-          </div>         
-           </div>
-        </div>
+
+        
+      </div>
 
         {/* CONTENT: TEXT + IMAGES */}
         <div className="mt-12 flex flex-col gap-12 md:flex-row">
