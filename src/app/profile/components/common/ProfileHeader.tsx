@@ -43,7 +43,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
           </button>
         </div>
 
-        <div className="absolute left-4 md:left-8 -bottom-16 md:-bottom-44">
+        <div className="absolute ml-20 left-4 md:left-8 -bottom-16 md:-bottom-44">
           <div className="w-40 h-48 md:w-72 md:h-80 p-1 shadow-lg">
             <div
               className="w-full h-full bg-gray-300 bg-cover bg-center"

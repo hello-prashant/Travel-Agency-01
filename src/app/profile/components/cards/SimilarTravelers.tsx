@@ -44,17 +44,6 @@ export default function SimilarTravelers() {
         }
     };
 
-    const getspotsColor = (spotsLeft: string) => {
-        const number = parseInt(spotsLeft.replace('% Safe', ''));
-        if (number <= 5) {
-            return 'bg-red-500 text-red-600 border-red-100';
-        } else if (number <= 10) {
-            return 'bg-yellow-400 text-yellow-700 border-yellow-100';
-        } else {
-            return 'bg-green-500 text-green-600 border-green-100';
-        }
-    };
-
     const handleLikeToggle = (index: number) => {
         const newLiked = [...isLiked];
         newLiked[index] = !newLiked[index];
@@ -195,7 +184,7 @@ export default function SimilarTravelers() {
                                                         <span className={`border text-white text-xs font-bold px-3 py-1 ${getmatchColor(card.match)}`}>
                                                             {card.match} Match
                                                         </span>
-                                                        <span className={`border text-white text-xs font-bold px-3 py-1 flex items-center gap-1 ${getspotsColor(card.spotsLeft)}`}>
+                                                        <span className={`bg-red-500 text-white text-xs font-bold px-3 py-1 flex items-center gap-1`}>
                                                             <span className="w-2 h-2 bg-white animate-pulse"></span>
                                                             {card.spotsLeft}
                                                         </span>
