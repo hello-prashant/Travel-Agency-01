@@ -29,7 +29,7 @@ export default function SimilarTripCard() {
           Bali, Indonesia
         </p>
         
-        <button className="w-full px-4 py-2 bg-pink-500 text-white rounded">
+        <button className="w-full px-4 py-2 bg-red-400 text-white rounded">
           View Trip
         </button>
       </div>
