@@ -1,114 +1,64 @@
-import React from "react";
-
-const Page = () => {
+import Image from "next/image";
+export default function Home() {
   return (
-    <div className="w-full flex flex-col items-center">
-
-      
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow  p-8 flex flex-col gap-4 relative">
-
-        
-        <div className="w-full">
-          <h4 className="text-lg font-semibold mb-4">
-            Featured Travel Agencies
-          </h4>
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={100}
+          height={20}
+          priority
+        />
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            To get started, edit the page.tsx file.
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Looking for a starting point or more instructions? Head over to{" "}
+            <a
+              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Templates
+            </a>{" "}
+            or the{" "}
+            <a
+              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Learning
+            </a>{" "}
+            center.
+          </p>
         </div>
-
-        <div className="flex gap-4">
-
-        
-          <div className="w-1/4 h-96">
-            <img
-              src="https://th.bing.com/th/id/R.f15778f5631bd17ccb031a2e60e262a1?rik=sefvPz%2fQGzGuGg&riu=http%3a%2f%2f2.bp.blogspot.com%2f-c4Py2wzt7U8%2fUixwB4-og5I%2fAAAAAAAAPGo%2fdSmkEuAWonE%2fs1600%2fburj-al-arab-1.jpg&ehk=ORN%2bnqDi0bIeEwa%2f2rV%2bNNq5h21lYsRrSYZyu2vuu%2fo%3d&risl=&pid=ImgRaw&r=0"
-              alt="agency"
-              className="rounded-lg w-full h-full object-cover"
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <a
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={16}
+              height={16}
             />
-          </div>
-
-    
-          <div className="w-1/2 flex flex-col gap-3">
-
-            <h1 className="text-xl font-bold">Wanderlust Adventures</h1>
-
-            <p className="text-gray-600">
-              Discover extraordinary travel experiences with us! We specialise in
-              curated adventure tours across breathtaking destinations.
-            </p>
-
-            <div className="flex gap-2 mt-2 flex-wrap">
-              {["Adventure Travel", "Cultural Tour", "Sustainable Travel"].map(
-                (tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs"
-                  >
-                    {tag}
-                  </span>
-                )
-              )}
-            </div>
-
-            <div className="mt-3 text-gray-800 space-y-1">
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>500+ travelers enrolled</div>
-              <div> <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/> 150+ trips completed</div>
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>8+ years in business</div>
-            </div>
-
-            <div className="border-t pt-3">
-              <div className="flex gap-3 items-center">
-                <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-                  SJ
-                </div>
-
-                <div>
-                 <div className="font-medium flex items-center gap-1">
-  <span>Sarah Johnson, 26</span>
-  <img 
-    src="tickmarks.png" 
-    alt="verified" 
-    className="w-4 h-4 inline-block"
-  />
-</div>
-
-                  <div className="text-sm text-gray-600">
-                    Goa, India • ⭐ 4.8
-                  </div>
-
-                  <div className="flex gap-2 mt-1">
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">
-                     <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Featured Trip Agency
-                    </span>
-                    <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
-                      88% Safe
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute top-90 right-0.5 flex gap-2">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-               <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Browse Trips
-              </button>
-              <button className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
-               <img src="view_profile.png"  alt="verified" className="w-4 h-4 inline-block"/> View Profile
-              </button>
-            </div>
-          </div>
+            Deploy Now
+          </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
+          </a>
         </div>
-
-        <div className="absolute top-24 right-4 flex gap-2">
-          <span className="px-3 py-1 text-white rounded-full text-sm">
-          <img src="Verfied Badge.png" alt="" />
-          </span>
-          <span className="px-3 py-1 bg-red-500 text-white rounded-full text-sm">
-            2 spots left
-          </span>
-        </div>
-
-      </div>
+      </main>
     </div>
   );
-};
-
-export default Page;
+}
