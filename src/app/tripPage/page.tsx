@@ -1,5 +1,5 @@
 import HeroSection from "./components/HeroSection";
-import DetailedItineraryCard from "@/app/tripPage/components/DetailedItineraryCard";
+import DetailedItineraryCard from "./components/DetailedItineraryCard";
 import JoinTripCard from "./components/JoinTripCard";
 import SafetyInfoCard from "./components/SafetyInfoCard"
 import CancellationCard from "./components/CancellationCard";
@@ -10,6 +10,7 @@ import TripOverview from "./components/TripOverviewCard"
 import TripRoadmapCard from "./components/TripRoadmapCard";
 import ShareTripCard from "./components/SharetripCard";
 import trip from "./data/trip"
+import SimilarTripCard from "./components/SimilarTripCard"
 
 export default function TripPage(){
   return (
@@ -23,6 +24,11 @@ export default function TripPage(){
           <DetailedItineraryCard />
           <SafetyInfoCard />
           <CancellationCard />
+          <div className="w-full flex flex-row items-start justify-start relative gap-4 pt-12">
+            <h2 className="text-2xl font-semibold absolute top-0">Similar Trips</h2>
+            <SimilarTripCard />
+
+          </div>
         </div>
         <div className="flex flex-col w-[30%] gap-7 items-center">
           <JoinTripCard />
@@ -37,3 +43,4 @@ export default function TripPage(){
   )
 
 }
+
