@@ -12,6 +12,8 @@ import ShareTripCard from "./components/SharetripCard";
 import trip from "./data/trip"
 import SimilarTripCard from "./components/SimilarTripCard"
 
+import similarTrips from "./data/similarTrips"; 
+
 export default function TripPage(){
   return (
     <section
@@ -26,7 +28,9 @@ export default function TripPage(){
           <CancellationCard />
           <div className="w-full flex flex-row items-start justify-start relative gap-4 pt-12">
             <h2 className="text-2xl font-semibold absolute top-0">Similar Trips</h2>
-            <SimilarTripCard />
+            {similarTrips.map((trip) => (
+              <SimilarTripCard key={trip.id} trip={trip}/>
+            ))}
 
           </div>
         </div>
