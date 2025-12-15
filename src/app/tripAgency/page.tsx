@@ -6,6 +6,7 @@ import TabNavigation from "./components/TabNavigation"
 import UpcomingTrips from "./components/UpcomingTrips";
 import PastTrips from "./components/PastTrips";
 import ContactInfoCard from "./components/ContactInfoCard"
+import ReviwCardContainer from "./components/ReviewCardContainer"
 
 export default function TripAgency(){
   return (
@@ -19,6 +20,7 @@ export default function TripAgency(){
           <TabNavigation children={[
             <UpcomingTrips key={0}/>, 
             <PastTrips key={1}/>,
+            <ReviwCardContainer key={2}/>,
           ]}/>
           
         </div>
