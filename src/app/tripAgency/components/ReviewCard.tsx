@@ -7,7 +7,7 @@ type Props = {
 
 export default function ReviwCard({ review }: Props) {
   return (
-    <div className="w-full h-40 border border-gray-100 shadow p-4 md:gap-4 flex flex-col gap-4">
+    <div className="w-full min-h-40 border border-gray-100 shadow p-4 flex flex-col gap-4">
       <div className="flex flex-row gap-4 items-center">
         <LuUsers className="w-10 h-10 text-gray-600 rounded-full bg-gray-200 p-1.5"/>
         <div className="flex flex-col">
