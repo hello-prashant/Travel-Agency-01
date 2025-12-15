@@ -10,7 +10,7 @@ export default function TripOverview({ trip }: { trip: any }) {
   const t = trip || {}
 
   return (
-    <section className="bg-white rounded-lg shadow border border-gray-300 p-6 pb-0">
+    <section className="bg-white shadow border border-gray-300 p-6 pb-0">
 
       {/* Header */}
       <div className="mb-6">

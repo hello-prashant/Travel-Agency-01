@@ -31,7 +31,7 @@ const travelers = [
 
 export default function TravelerCard() {
   return (
-    <div className="bg-white border-2 border-gray-300 rounded-lg min-w-[320px] w-90 max-w-md h-75 shadow p-4">
+    <div className="bg-white border-2 border-gray-300 min-w-[320px] w-90 max-w-md h-75 shadow p-4">
       
       {/* Title */}
       <div >
@@ -98,7 +98,7 @@ export default function TravelerCard() {
             </div>
 
             {/* View Button */}
-            <button className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm rounded">
+            <button className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm ">
               View
             </button>
           </div>
