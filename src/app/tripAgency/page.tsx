@@ -7,6 +7,7 @@ import UpcomingTrips from "./components/UpcomingTrips";
 import PastTrips from "./components/PastTrips";
 import ContactInfoCard from "./components/ContactInfoCard"
 import ReviwCardContainer from "./components/ReviewCardContainer"
+import TravelPhotosCard from "./components/TravelPhotosCard"
 
 export default function TripAgency(){
   return (
@@ -21,6 +22,7 @@ export default function TripAgency(){
             <UpcomingTrips key={0}/>, 
             <PastTrips key={1}/>,
             <ReviwCardContainer key={2}/>,
+            <TravelPhotosCard key={3}/>  
           ]}/>
           
         </div>
@@ -32,4 +34,5 @@ export default function TripAgency(){
     </section>
   )
 }
+
 
