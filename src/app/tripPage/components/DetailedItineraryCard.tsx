@@ -1,6 +1,6 @@
 export default function DetailedItineraryCard(){
   return (
-    <div className="w-full p-6 border border-gray-300 rounded-lg flex flex-col">
+    <div className="w-full p-6 border border-gray-300 flex flex-col">
       <h4 className="text-sm font-semibold" >Detailed Itinerary</h4>
 
       <div id='item' className="item flex flex-col flex-wrap relative mt-2">
