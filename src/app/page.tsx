@@ -1,114 +1,184 @@
-import React from "react";
+"use client";
 
-const Page = () => {
+import { useState } from "react";
+
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="w-full flex flex-col items-center">
-
-      
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow  p-8 flex flex-col gap-4 relative">
-
-        
-        <div className="w-full">
-          <h4 className="text-lg font-semibold mb-4">
-            Featured Travel Agencies
-          </h4>
-        </div>
-
-        <div className="flex gap-4">
-
-        
-          <div className="w-1/4 h-96">
-            <img
-              src="https://th.bing.com/th/id/R.f15778f5631bd17ccb031a2e60e262a1?rik=sefvPz%2fQGzGuGg&riu=http%3a%2f%2f2.bp.blogspot.com%2f-c4Py2wzt7U8%2fUixwB4-og5I%2fAAAAAAAAPGo%2fdSmkEuAWonE%2fs1600%2fburj-al-arab-1.jpg&ehk=ORN%2bnqDi0bIeEwa%2f2rV%2bNNq5h21lYsRrSYZyu2vuu%2fo%3d&risl=&pid=ImgRaw&r=0"
-              alt="agency"
-              className="rounded-lg w-full h-full object-cover"
-            />
-          </div>
-
-    
-          <div className="w-1/2 flex flex-col gap-3">
-
-            <h1 className="text-xl font-bold">Wanderlust Adventures</h1>
-
-            <p className="text-gray-600">
-              Discover extraordinary travel experiences with us! We specialise in
-              curated adventure tours across breathtaking destinations.
-            </p>
-
-            <div className="flex gap-2 mt-2 flex-wrap">
-              {["Adventure Travel", "Cultural Tour", "Sustainable Travel"].map(
-                (tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs"
-                  >
-                    {tag}
-                  </span>
-                )
-              )}
-            </div>
-
-            <div className="mt-3 text-gray-800 space-y-1">
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>500+ travelers enrolled</div>
-              <div> <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/> 150+ trips completed</div>
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>8+ years in business</div>
-            </div>
-
-            <div className="border-t pt-3">
-              <div className="flex gap-3 items-center">
-                <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-                  SJ
-                </div>
-
-                <div>
-                 <div className="font-medium flex items-center gap-1">
-  <span>Sarah Johnson, 26</span>
-  <img 
-    src="tickmarks.png" 
-    alt="verified" 
-    className="w-4 h-4 inline-block"
-  />
-</div>
-
-                  <div className="text-sm text-gray-600">
-                    Goa, India • ⭐ 4.8
-                  </div>
-
-                  <div className="flex gap-2 mt-1">
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">
-                     <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Featured Trip Agency
-                    </span>
-                    <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
-                      88% Safe
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute top-90 right-0.5 flex gap-2">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-               <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Browse Trips
-              </button>
-              <button className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
-               <img src="view_profile.png"  alt="verified" className="w-4 h-4 inline-block"/> View Profile
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute top-24 right-4 flex gap-2">
-          <span className="px-3 py-1 text-white rounded-full text-sm">
-          <img src="Verfied Badge.png" alt="" />
-          </span>
-          <span className="px-3 py-1 bg-red-500 text-white rounded-full text-sm">
-            2 spots left
-          </span>
-        </div>
-
-      </div>
+    <div className="border-b">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center py-3 text-sm font-medium"
+      >
+        {title}
+        <span>{open ? "▲" : "▼"}</span>
+      </button>
+      {open && <div className="pb-3 space-y-2">{children}</div>}
     </div>
   );
 };
 
-export default Page;
+export default function FilterPanel() {
+  const [duration, setDuration] = useState(5);
+  const [age, setAge] = useState(18);
+  const [budget, setBudget] = useState(15000);
+  const [compatibility, setCompatibility] = useState("Any");
+
+  return (
+    <div className="w-[360px] h-screen bg-white border rounded-lg overflow-y-auto p-4">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-4">
+        <button className="text-sm text-gray-600">← Back</button>
+        <button className="text-sm text-blue-600">Clear all filters</button>
+      </div>
+
+      {/* Destination */}
+      <input
+        placeholder="Destination typing..."
+        className="w-full border px-3 py-2 rounded mb-3"
+      />
+
+      <div className="flex gap-2 mb-4">
+        {["Locals", "Nearby", "Starting point"].map((i) => (
+          <button
+            key={i}
+            className="px-3 py-1 text-xs text-white border rounded bg-teal-800"
+          >
+            {i}
+          </button>
+        ))}
+      </div>
+
+      {/* Language */}
+      <input
+        placeholder="Language typing..."
+        className="w-full border px-3 py-2 rounded mb-2"
+      />
+      <span className="inline-block bg-teal-800 text-white text-xs px-2 py-1 rounded mb-3">
+        English ✕
+      </span>
+
+      {/* Interests */}
+      <div className="flex gap-2 mb-4">
+        <input
+          placeholder="Add what you like... e.g"
+          className="flex-1 border px-3 py-2 rounded"
+        />
+        <button className="px-3 border rounded">Add</button>
+      </div>
+
+      {/* Rating */}
+      <Section title="Rating">
+        <div className="flex gap-1 text-gray-400 text-xl">★★★★★</div>
+        <span className="text-sm text-gray-500">Any</span>
+      </Section>
+
+      {/* Compatibility */}
+      <Section title="Compatibility">
+        {["90%+", "80%+", "70%+", "60%+", "50%+", "Any"].map((v) => (
+          <label
+            key={v}
+            className={`flex items-center gap-2 p-2 rounded cursor-pointer ${
+              compatibility === v ? "bg-teal-50" : ""
+            }`}
+          >
+            <input
+              type="radio"
+              checked={compatibility === v}
+              onChange={() => setCompatibility(v)}
+            />
+            {v}
+          </label>
+        ))}
+      </Section>
+
+      {/* Safe Score */}
+      <Section title="Safe Score">
+        <p className="text-sm text-gray-500">Any</p>
+      </Section>
+
+      {/* Trip Type */}
+      <Section title="Trip Type">
+        <div className="grid grid-cols-2 gap-2">
+          {["Solo", "Couple", "Family", "Group"].map((t) => (
+            <button
+              key={t}
+              className="border rounded py-1 text-sm"
+            >
+              + {t}
+            </button>
+          ))}
+          <button className="col-span-2 bg-teal-700 text-white rounded py-1">
+            + All
+          </button>
+        </div>
+      </Section>
+
+      {/* Food Preference */}
+      <Section title="Food Preference">
+        <div className="grid grid-cols-2 gap-2">
+          {["Vegetarian", "Non-Veg", "Vegan", "Halal"].map((f) => (
+            <button key={f} className="border rounded py-1 text-sm">
+              + {f}
+            </button>
+          ))}
+          <button className="col-span-2 bg-teal-700 text-white rounded py-1">
+            + All
+          </button>
+        </div>
+      </Section>
+
+      {/* Duration */}
+      <Section title="Duration (days)">
+        <input
+          type="range"
+          min={1}
+          max={30}
+          value={duration}
+          onChange={(e) => setDuration(+e.target.value)}
+          className="w-full"
+        />
+        <p className="text-sm">{duration} days</p>
+      </Section>
+
+      {/* Age Range */}
+      <Section title="Age Range">
+        <input
+          type="range"
+          min={18}
+          max={60}
+          value={age}
+          onChange={(e) => setAge(+e.target.value)}
+          className="w-full"
+        />
+        <p className="text-sm">{age} Years</p>
+      </Section>
+
+      {/* Budget */}
+      <Section title="Budget (Rs)">
+        <input
+          type="range"
+          min={1000}
+          max={100000}
+          step={1000}
+          value={budget}
+          onChange={(e) => setBudget(+e.target.value)}
+          className="w-full"
+        />
+        <p className="text-sm">₹{budget.toLocaleString()}</p>
+      </Section>
+
+      {/* Apply */}
+      <button className="w-full bg-teal-800 text-white py-3 rounded mt-6">
+        Apply Filter
+      </button>
+    </div>
+  );
+}
