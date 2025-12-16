@@ -164,11 +164,11 @@ export default function FeaturedAgencyCard({ agency, index }: Props) {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 bg-amber-200 text-orange-800 ">
+                  <div className="flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 bg-amber-200 text-orange-800 rounded-full">
                     <FaUser className="size-3 fill-orange-800"/>
                     Featured Trip Agency
                   </div>
-                  <div className={`flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 border ${getColor(agency.featuredBy.safetyRate)}`}>
+                  <div className={`flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 border rounded-full ${getColor(agency.featuredBy.safetyRate)}`}>
                     <LuShieldCheck className="size-3" strokeWidth={3}/>
                     {agency.featuredBy.safetyRate} Safe
                   </div>
