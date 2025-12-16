@@ -29,7 +29,7 @@ const KeyFeatures: React.FC = () => {
 
   return (
     <section className="w-full bg-white py-16">
-      <div className="mx-auto flex max-w-6xl flex-col px-4">
+      <div className="mx-auto flex max-w-7xl flex-col px-4">
         
         {/* CENTERED HEADING */}
         {/* TITLE */}
