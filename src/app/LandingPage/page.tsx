@@ -14,14 +14,14 @@ import Community from "@/components/landing-page/Join-community";
 export default function LandingPage() {
   return (
     <main>
-      <Nav />
+      {/* <Nav /> */}
       <Hero />
       <KeyFeatures />
       <WhyChooseTravio />
       <HowItWorks />
       <SafetyTrustSection />
       <Community />
-      <TravioFooter />
+      {/* <TravioFooter /> */}
       <ScrollTopButton />
     </main>
   );

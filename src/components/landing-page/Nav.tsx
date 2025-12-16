@@ -2,7 +2,7 @@
 import React from 'react';  
 
 export const Nav = () => (
- <> <nav className=" z-10 flex justify-between items-center px-2 py-3 lg:px-10 text-white bg-black/20 backdrop-blur-md w-full shadow-md fixed">
+ <> <nav className=" z-30 flex justify-between items-center px-2 py-3 lg:px-10 text-white bg-black/20 backdrop-blur-md w-full shadow-md fixed">
     <h1 className="text-2xl lg:text-4xl font-bold tracking-wide">Travio</h1>
 
     <ul className="flex gap-3 text-sm lg:text-lg lg:gap-8 font-semibold">
