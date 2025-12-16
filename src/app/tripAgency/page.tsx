@@ -1,9 +1,8 @@
-import FeaturedAgencyCard from './components/AgencyCard'
-import featuredAgencies from "./data/agencies";
+import FeaturedAgencyContainer from './components/FeaturedAgency';
 export default function page() {
   return (
     <div>
-      <FeaturedAgencyCard agency={featuredAgencies[0]}/>
+      <FeaturedAgencyContainer />
     </div>
   )
 }

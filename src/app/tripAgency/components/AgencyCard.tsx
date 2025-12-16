@@ -1,119 +1,204 @@
+'use client'
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { useState } from "react";
+import { LuShieldCheck, LuEye, LuStar, LuHeart, LuCircleCheck, LuUserPlus, } from "react-icons/lu";
+import { CiWarning } from "react-icons/ci";
+import { FaBriefcase, FaWallet, FaFlag, FaCalendar, FaUser,} from "react-icons/fa";
+import { SlBadge } from "react-icons/sl";
+
 type Props = {
   agency: any;
+  index: number;
 }
-export default function FeaturedAgencyCard({agency}: Props) {
-  return (
-    <div>
-      <div className="w-full bg-white shadow  p-8 flex flex-col gap-4 relative">
+export default function FeaturedAgencyCard({ agency, index }: Props) {
+  const router = useRouter();
+  const [isLiked, setIsLiked] = useState([false, false, false]);
 
-        
-        <div className="w-full">
-          <h4 className="text-lg font-semibold mb-4">
-            Featured Travel Agencies
-          </h4>
+  const handleLikeToggle = (index: number) => {
+    const newLiked = [...isLiked];
+    newLiked[index] = !newLiked[index];
+    setIsLiked(newLiked);
+  };
+
+  const getColor = (safetyPercentage: string) => {
+    const percentage = parseInt(safetyPercentage.replace('% Safe', ''));
+    if (percentage <= 50) {
+      return 'bg-red-50 text-red-600 border-red-200';
+    } else if (percentage <= 80) {
+      return 'bg-yellow-50 text-yellow-700 border-yellow-200';
+    } else {
+      return 'bg-green-100 text-green-600 border-green-300';
+    }
+  };
+
+  const getmatchColor = (match: string) => {
+    const percentage = parseInt(match.replace('% Safe', ''));
+    if (percentage <= 50 || !percentage) {
+      return 'bg-red-500 text-red-600 border-red-100';
+    } else if (percentage <= 70) {
+      return 'bg-yellow-400 text-yellow-700 border-yellow-100';
+    } else {
+      return 'bg-green-500 text-green-600 border-green-100';
+    }
+  };
+
+  const getNameInitials = (name: string) => {
+    if (!name || name === '') return 'NA';
+    const names = name.split(' ');
+    const initials = names.map((n) => n.charAt(0).toUpperCase()).join('');
+    return initials;
+  }
+
+  const handleViewTrip = (tripId: string) => {
+    router.push(`/trips/${tripId}`);
+  };
+
+  const handleJoinTrip = () => {
+    alert('Join trip functionality would be implemented here');
+  };
+
+  return (
+    <div key={agency.tripId} className="w-full shrink-0">
+      <div className="bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex flex-col lg:flex-row">
+        {/* Image Section */}
+        <div className="relative w-full lg:w-[350px] h-64 lg:h-auto shrink-0">
+          <img
+            src={agency.imgUrl}
+            alt={agency.agencyTitle}
+            className="w-full h-full object-cover"
+          />
+          <button
+            onClick={() => handleLikeToggle(index)}
+            className="absolute top-4 right-4 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/40 transition-colors cursor-pointer"
+          >
+            <LuHeart className={`w-5 h-5 ${isLiked[index] ? 'text-red-500 fill-red-500' : 'text-white fill-white'}`} />
+          </button>
         </div>
 
-        <div className="flex gap-4">
-        
-          <div className="w-1/4 h-96">
-            <img
-              src={agency.imgUrl}
-              alt={agency.agencyTitle}
-              loading="lazy"
-              className=" w-full h-full object-cover"
-            />
+        {/* Content Section */}
+        <div className="flex-1 p-6 flex flex-col justify-between">
+          <div className="space-y-4">
+            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-2">
+              <div className="space-y-1">
+                <h2 className="text-xl lg:text-2xl font-bold text-gray-900 leading-tight">
+                  {agency.agencyTitle}
+                </h2>
+                <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
+                  {agency.description}
+                </p>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <span className={`border text-white text-xs font-bold px-3 py-1 ${getmatchColor(agency.match || '')}`}>
+                  {agency.match} Match
+                </span>
+                <span className={`bg-red-500 text-white text-xs font-bold px-3 py-1 flex flex-row items-center gap-1`}>
+                  <CiWarning className="size-3.5 text-white animate-pulse" strokeWidth={2} />
+                  {agency.spotsLeft} spots left
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {agency.tags.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="relative pl-5 ml-0.5 border-l-2 border-dotted border-gray-300 py-1">
+              <span className="absolute -left-1.5 top-1 w-2.5 h-2.5 border-2 border-gray-400 bg-white rounded-full"></span>
+              <span className="absolute -left-1.5 bottom-1 w-2.5 h-2.5 bg-gray-900 rounded-full"></span>
+              <p className="text-[13px] text-gray-600 leading-none mb-1">
+                {agency.locations[0]}
+              </p>
+              <p className="text-[13px] font-semibold text-gray-900 leading-none">
+                {agency.locations[1]}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-y-3 gap-x-8 pt-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <FaCalendar className="w-4 h-4 text-gray-900 fill-gray-600" />
+                <span className="font-medium text-gray-600">{agency.dateRange}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaWallet className="w-4 h-4 text-gray-900 fill-gray-600" />
+                <span className="font-medium text-gray-600">{agency.budget}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaFlag className="w-4 h-4 text-gray-900 fill-gray-600" />
+                <span className="font-medium text-gray-600">{agency.tripsCompleted}</span>
+              </div>
+            </div>
           </div>
 
-          <div className="w-1/2 flex flex-col gap-3">
-            <h1 className="text-xl font-bold">Wanderlust Adventures</h1>
+          <hr className="my-5 border-gray-900" />
 
-            <p className="text-sm text-gray-600">
-              Discover extraordinary travel experiences with us! We specialise in
-              curated adventure tours across breathtaking destinations.
-            </p>
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 bg-amber-600/90 flex items-center justify-center text-white rounded-full font-bold text-lg shrink-0 relative">
+                {getNameInitials(agency.featuredBy.name)}
+                <span className="absolute -right-1.5 -bottom-2 size-5 rounded-full bg-white flex items-center justify-center shadow-md"> 
+                  <SlBadge className="fill-amber-600 size-3.5 font-extrabold" strokeWidth={4}/>
+                </span>
+              </div>
 
-            <div className="flex gap-2 mt-2 flex-wrap">
-              {["Adventure Travel", "Cultural Tour", "Sustainable Travel"].map(
-                (tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs"
-                  >
-                    {tag}
-                  </span>
-                )
-              )}
-            </div>
-
-            <div className="mt-3 text-gray-800 space-y-1">
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>500+ travelers enrolled</div>
-              <div> <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/> 150+ trips completed</div>
-              <div>  <img src="currency.png"  alt="verified" className="w-4 h-4 inline-block"/>8+ years in business</div>
-            </div>
-
-            <div className="border-t pt-3">
-              <div className="flex gap-3 items-center">
-                <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-                  SJ
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-gray-900">{agency.featuredBy.name}, {agency.featuredBy.age}</span>
+                  <LuCircleCheck className="size-5 fill-green-500 text-white" />
                 </div>
-
-                <div>
-                 <div className="font-medium flex items-center gap-1">
-  <span>Sarah Johnson, 26</span>
-  <img 
-    src="tickmarks.png" 
-    alt="verified" 
-    className="w-4 h-4 inline-block"
-  />
-</div>
-
-                  <div className="text-sm text-gray-600">
-                    Goa, India • ⭐ 4.8
+                <div className="flex items-center gap-2 text-xs text-gray-500">
+                  <span>{agency.featuredBy.location}</span>
+                  <span className="w-1 h-1 bg-gray-700 rounded-full"></span>
+                  <div className="flex items-center">
+                    <LuStar className="size-3.5 fill-current mr-0.5 text-yellow-500" />
+                    <span className=" text-gray-500 text-xs">
+                      {agency.featuredBy.rating}
+                    </span>
                   </div>
-
-                  <div className="flex gap-2 mt-1">
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">
-                     <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Featured Trip Agency
-                    </span>
-                    <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
-                      88% Safe
-                    </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 bg-amber-200 text-orange-800 ">
+                    <FaUser className="size-3 fill-orange-800"/>
+                    Featured Trip Agency
+                  </div>
+                  <div className={`flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 border ${getColor(agency.featuredBy.safetyRate)}`}>
+                    <LuShieldCheck className="size-3" strokeWidth={3}/>
+                    {agency.featuredBy.safetyRate} Safe
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="absolute top-90 right-0.5 flex gap-2">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-               <img src="join_trips.png"  alt="verified" className="w-4 h-4 inline-block"/> Browse Trips
+            <div className="flex items-center gap-2 mt-2 lg:mt-0">
+              <button
+                onClick={() => handleViewTrip(agency.tripId)}
+                className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
+              >
+                <FaBriefcase className="size-3 mr-1" />
+                View Trip
               </button>
-              <button className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
-               <img src="view_profile.png"  alt="verified" className="w-4 h-4 inline-block"/> View Profile
+              <button
+                onClick={handleJoinTrip}
+                className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
+              >
+                <LuUserPlus className="size-3.5 mr-1" strokeWidth={2} />
+                Join Trip
               </button>
+              <Link href="/profile" className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
+                <LuEye className="size-4 mr-1" strokeWidth={2} />
+                View Profile
+              </Link>
             </div>
           </div>
         </div>
-
-        <div className="absolute top-24 right-4 flex gap-2">
-          <span className="px-3 py-1 text-white rounded-full text-sm">
-          <img src="Verfied Badge.png" alt="" />
-          </span>
-          <span className="px-3 py-1 bg-red-500 text-white rounded-full text-sm">
-            2 spots left
-          </span>
-        </div>
-
       </div>
     </div>
   )
 }
-
-const Page = () => {
-  return (
-    <div className="w-full flex flex-col items-center">
-
-      
-      
-    </div>
-  );
-};
