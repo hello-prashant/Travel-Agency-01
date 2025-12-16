@@ -8,7 +8,6 @@ import agencies from "../data/agencies";
 export default function FeaturedAgencyContainer() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   
-
   const handlePrevCard = () => {
     setCurrentCardIndex((prev) => (prev === 0 ? agencies.length - 1 : prev - 1));
   };
@@ -18,7 +17,7 @@ export default function FeaturedAgencyContainer() {
   };
 
   return (
-    <div className="w-full bg-gray-50 p-4 font-sans">
+    <div className="w-full px-4 font-sans">
       <div className="w-full mx-auto">
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Featured Travel Agency</h1>
 

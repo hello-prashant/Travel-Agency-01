@@ -32,7 +32,9 @@ export default function TripAgency(){
           <TrustSafetyCard />
         </div>
       </div>
+      <div className="-mt-2.5">
         <FeaturedAgencyContainer />
+      </div>
     </section>
   )
 }
