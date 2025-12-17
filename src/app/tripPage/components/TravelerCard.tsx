@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 import { BsShieldFillCheck } from "react-icons/bs";
 
@@ -98,9 +99,10 @@ export default function TravelerCard() {
             </div>
 
             {/* View Button */}
-            <button className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm ">
+            <Link href={'/profile/'} 
+            className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm ">
               View
-            </button>
+            </Link>
           </div>
         ))}
       </div>
