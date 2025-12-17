@@ -2,7 +2,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { LuFacebook, LuTwitter,  } from "react-icons/lu";
 export default function ShareTripCard(){
   return (
-    <div className="min-w-[320px] w-90 min-h-20 border-2 border-gray-300 h-32 p-4">
+    <div className="min-w-[320px] w-full min-h-20 border-2 border-gray-300 h-32 p-4">
       <h2 className="font-bold text-lg ">Share this trip</h2>
       <div className="w-full flex flex-row gap-6 md:gap-10 mt-4">
         <a className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 cursor-pointer">

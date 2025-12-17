@@ -31,7 +31,7 @@ const travelers = [
 
 export default function TravelerCard() {
   return (
-    <div className="bg-white border-2 border-gray-300 min-w-[320px] w-90 max-w-md h-75 shadow p-4">
+    <div className="bg-white border-2 border-gray-300 min-w-[320px] w-full h-75 shadow p-4">
       
       {/* Title */}
       <div >

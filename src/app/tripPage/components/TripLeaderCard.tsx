@@ -2,7 +2,7 @@ import { FaCheckCircle, FaStar } from "react-icons/fa";
 import { LuShieldCheck } from "react-icons/lu";
 export default function TripLeaderCard(){
   return (
-    <div className="min-w-[320px] w-90 min-h-50 border-2 border-gray-300 h-58 p-4">
+    <div className="min-w-[320px] w-full min-h-50 border-2 border-gray-300 h-58 p-4">
       <h2 className="font-bold text-lg ">Trip Leader</h2>
       <div className="flex flex-row gap-4 mt-4">
         <img 
