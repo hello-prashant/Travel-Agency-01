@@ -177,21 +177,19 @@ export default function FeaturedAgencyCard({ agency, index }: Props) {
             </div>
 
             <div className="flex items-center gap-2 mt-2 lg:mt-0">
-              <button
-                onClick={() => handleViewTrip(agency.tripId)}
-                className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
+              <Link href={'/tripPage/'}
+                className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
               >
                 <FaBriefcase className="size-3 mr-1" />
                 View Trip
-              </button>
-              <button
-                onClick={handleJoinTrip}
-                className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
+              </Link>
+              <Link href={'/tripPage/'}
+                className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
               >
                 <LuUserPlus className="size-3.5 mr-1" strokeWidth={2} />
                 Join Trip
-              </button>
-              <Link href="/profile" className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
+              </Link>
+              <Link href="/profile" className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
                 <LuEye className="size-4 mr-1" strokeWidth={2} />
                 View Profile
               </Link>

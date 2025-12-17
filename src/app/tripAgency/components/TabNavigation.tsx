@@ -7,6 +7,7 @@ type Props = {
 
 export default function TabNavigation({children}: Props){
   const [activeTab, setActiveTab] = useState<number>(0)
+
   return (
     <section className="max-h-screen relative shadow z-10">
     <div className="w-full h-15 p-6 flex flex-row gap-10 bg-gray-200 border-b absolute top-0 left-0">
@@ -63,8 +64,8 @@ export default function TabNavigation({children}: Props){
       </div>
     </div>
 
-    <div className="w-full h-full p-6 pt-21 overflow-y-scroll ">
-      <div className="relative -z-10">
+    <div className="w-full h-full p-6 pt-21  ">
+      <div className="relative overflow-hidden max-h-full overflow-y-scroll">
       { 
         Array.isArray(children) && children.length>0 ?
           children[activeTab] :

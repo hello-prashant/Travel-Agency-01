@@ -50,21 +50,21 @@ export default function HeroSection(){
           </div>
 
           <div className="flex flex-row gap-4 pl-6">
-            <div className=" text-white py-2 px-4 bg-cyan-900 h-10 inline-flex justify-center items-center gap-3">
+            <div className=" text-white py-2 px-4 bg-[#1d4350] hover:bg-cyan-800 h-10 inline-flex justify-center items-center gap-3 cursor-pointer transition-colors duration-300"  >
               <MdPersonAddAlt1 className="scale-125"/>
               <span className="text-base">Follow</span> 
             </div>
 
-            <div className=" text-white py-2 px-4 bg-cyan-900 h-10 inline-flex justify-center items-center gap-3">
+            <div className=" text-white py-2 px-4 bg-[#1d4350] hover:bg-cyan-800 h-10 inline-flex justify-center items-center gap-3 cursor-pointer transition-colors duration-300">
               <TbLuggage className="scale-125"/>
               <span className="text-base">Join Trip</span> 
             </div>
           
-            <div className="bg-cyan-900 h-10 flex justify-center items-center text-white rounded-full w-10 ">
+            <div className="bg-[#1d4350] hover:bg-cyan-800 h-10 flex justify-center items-center text-white rounded-full w-10 cursor-pointer transition-colors duration-300">
               <MdChat className="scale-125"/>
             </div>
 
-            <div className="bg-cyan-900 h-10 flex justify-center items-center text-white rounded-full w-10 ">
+            <div className="bg-[#1d4350] hover:bg-cyan-800 h-10 flex justify-center items-center text-white rounded-full w-10 cursor-pointer transition-colors duration-300">
               <FaHeart className="scale-125"/>
             </div>
           </div>
