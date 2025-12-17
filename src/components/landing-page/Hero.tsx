@@ -14,14 +14,14 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center text-white">
+    <section className="relative flex min-h-[calc(100vh-68px)] mt-[68px] items-center justify-center text-white">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/hero-images/hero-bg.jpg.png')" }}
       />
       {/* Overlay */}
-      <div  />
+      <div />
 
       {/* Content */}
       <div className="relative z-5 flex w-full max-w-5xl flex-col items-center px-4 py-10 text-center">
@@ -38,7 +38,8 @@ const Hero: React.FC = () => {
 
         {/* Subtitle */}
         <p className="mt-4 max-w-2xl text-base sm:text-lg text-gray-100">
-          Connect with like-minded travelers, personalize your </p>
+          Connect with like-minded travelers, personalize your{" "}
+        </p>
         <p className="mt-4 max-w-2xl text-base sm:text-lg text-gray-100">
           journey, and explore the world safely with AI-powered matches.
         </p>
@@ -97,8 +98,9 @@ const Hero: React.FC = () => {
 
         {/* Trust badges */}
         <div className="mt-5 flex flex-col items-center gap-1 text-xs sm:text-sm text-gray-100">
-          <p>100k+ Verified Travelers • 98% Safety Rating • AI-Powered Matching</p>
-          
+          <p>
+            100k+ Verified Travelers • 98% Safety Rating • AI-Powered Matching
+          </p>
         </div>
       </div>
     </section>
