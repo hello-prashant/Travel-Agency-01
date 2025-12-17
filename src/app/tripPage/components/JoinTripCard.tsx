@@ -24,8 +24,8 @@ export default function JoinTripCard() {
             <span className="font-medium text-emerald-500">3 remaining</span>
           </div>
         </div>
-        <button className="w-full mb-3 px-4 py-2.5 bg-[#F47C7C] text-white text-sm font-semibold hover:bg-[#e06d6d]">Join this trip</button>
-        <button className="w-full mb-2 px-4 py-2.5 border-2 border-gray-400 text-sm font-medium text-gray-800 flex items-center justify-center gap-2 hover:bg-gray-50">
+        <button className="w-full mb-3 px-4 py-2.5 bg-[#1d4350] text-white text-sm font-semibold cursor-pointer hover:bg-cyan-800 transition-colors duration-300">Join this trip</button>
+        <button className="w-full mb-2 px-4 py-2.5 border-2 border-gray-400 text-sm font-medium text-gray-800 flex items-center justify-center gap-2 hover:bg-cyan-800 hover:border-cyan-800 hover:text-white transition-colors duration-300">
           <span className="w-2 h-2 rounded-full bg-emerald-500" />
           <span>Chat with Organizer</span>
         </button>

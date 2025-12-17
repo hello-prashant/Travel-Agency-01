@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <div className=" bg-gray-50 flex flex-col">
       {/* Navbar */}
-      <header className="w-full border-b border-gray-100 bg-white/90 backdrop-blur z-20">
+      {/* <header className="w-full border-b border-gray-100 bg-white/90 backdrop-blur z-20">
         <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
           <div className="flex items-center gap-1">
             <span className="text-2xl font-bold text-pink-500">Travlo</span>
@@ -25,7 +25,7 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* Hero Section */}
       <main className="w-full">
@@ -42,8 +42,8 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
             {/* Back button */}
-            <button className="absolute top-6 left-6 flex items-center gap-2 text-black/90 text-base font-bold">
-              <span className="text-xl">&#8592;</span>
+            <button className="absolute top-6 left-6 flex items-center gap-2 text-black/90 text-base font-bold cursor-pointer">
+              <span className="text-2xl">&#8592;</span>
               <span>BACK</span>
             </button>
 

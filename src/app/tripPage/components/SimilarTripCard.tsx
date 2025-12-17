@@ -33,7 +33,7 @@ export default function SimilarTripCard({ trip }: Props) {
           {trip.locations[1]}
         </p>
         
-        <button className="w-full px-4 py-2 bg-red-400 text-white cursor-pointer">
+        <button className="w-full px-4 py-2 bg-[#1d4350] text-white font-semibold cursor-pointer hover:bg-cyan-800 transition-all duration-300">
           View Trip
         </button>
       </div>
