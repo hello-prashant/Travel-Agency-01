@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative flex min-h-[calc(100vh-68px)] mt-[68px] items-center justify-center text-white">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden text-white">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

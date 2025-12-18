@@ -115,14 +115,17 @@ export default function HowItWorks() {
 
         {/* STEPS LIST */}
         <div className="md:w-1/2 space-y-10">
-          <ul className="relative space-y-20 border-l-3 border-gray-300 pl-10">
-            {/* Progress Bar */}
+          <ul className="relative space-y-20 pl-10">
+            {/* Inactive Progress Bar (Gray) */}
+            <div className="absolute left-0 top-0 h-full w-2.5 bg-gray-300 rounded-full" />
+
+            {/* Active Progress Bar (Sky) */}
             <div
-              className="absolute left-0 top-0 w-2.5 bg-sky-600 transition-all duration-500"
+              className="absolute left-0 top-0 w-2.5 bg-sky-600 rounded-full transition-all duration-500"
               style={{
-                height: `${activeStep * 105}px`, // adjust if spacing changes
+                height: `${activeStep * 106}px`, // keep your logic
               }}
-            ></div>
+            />
 
             {steps.map((step) => (
               <li key={step.id}>

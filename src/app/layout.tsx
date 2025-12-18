@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Travio - Your Travel Companion",
-  description: "Discover amazing destinations and create unforgettable memories with Travio, your trusted travel companion.",
+  description:
+    "Discover amazing destinations and create unforgettable memories with Travio, your trusted travel companion.",
 };
 
 export default function RootLayout({
@@ -27,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen overflow-x-hidden`}
       >
-        <main className="flex-grow">
-          <Nav />
+        <Nav />
+        <main className="pt-[68px] flex-1 overflow-x-hidden">
           {children}
           <TravioFooter />
         </main>
