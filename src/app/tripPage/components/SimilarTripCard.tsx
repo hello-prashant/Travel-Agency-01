@@ -12,12 +12,12 @@ export default function SimilarTripCard({ trip }: Props) {
     <div className='w-sm md:w-75 h-100 flex flex-col justify-center items-center border border-gray-400 overflow-hidden'>
       <div className="h-1/2 w-full">
         <img src={trip.tripImage} alt={trip.locations[1]} 
-        className="w-full h-full object-cover"/>
+        className="w-full h-full object-cover bg-gray-300"/>
       </div>
       <div className="h-1/2 w-full flex flex-col gap-2.5 p-2">
         <div className="relative w-full inline-flex items-center gap-4">
           <img src={trip.organizerImage} alt={trip.organizer}  
-          className="absolute -top-5 left-0 w-14 h-14 "/>
+          className="absolute -top-5 left-0 w-14 h-14 bg-gray-300"/>
           <h2 className="ml-16 text-lg text-black">Organizer: {trip.organizer}</h2>
         </div>
         

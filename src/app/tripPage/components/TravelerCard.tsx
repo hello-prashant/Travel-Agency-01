@@ -55,7 +55,7 @@ export default function TravelerCard() {
                 <img
                   src={t.avatar}
                   alt={t.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover bg-gray-300"
                 />
               </div>
 

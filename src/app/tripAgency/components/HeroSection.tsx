@@ -8,12 +8,12 @@ export default function HeroSection(){
     <div className="w-full h-1/2 shadow ">
       <div className="w-full h-65 ">        
         <img src="/hero-cover-img.jpg" alt="Cover Picture" 
-        className="object-cover w-full h-full "/>
+        className="object-cover w-full h-full bg-gray-300"/>
       </div>
       <div className="w-full p-6 min-h-45 flex flex-row relative">
         <div className="w-70 h-65 absolute -top-28 ">
           <img src="/hero-profile-pic.jpg" alt="" 
-          className="object-fill w-full h-full shadow-lg"/>
+          className="object-fill w-full h-full shadow-lg bg-gray-300"/>
         </div>
 
         <div className="w-full flex flex-row justify-between ml-70" >

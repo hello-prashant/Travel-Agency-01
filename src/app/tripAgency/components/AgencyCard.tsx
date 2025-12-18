@@ -66,7 +66,7 @@ export default function FeaturedAgencyCard({ agency, index }: Props) {
           <img
             src={agency.imgUrl}
             alt={agency.agencyTitle}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover bg-gray-300"
           />
           <button
             onClick={() => handleLikeToggle(index)}
