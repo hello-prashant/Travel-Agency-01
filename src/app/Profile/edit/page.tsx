@@ -31,7 +31,7 @@ export default function EditProfilePage() {
       <div className="max-w-7xl mx-auto space-y-6">
 
         {/* HEADER (edit mode) */}
-        {/* <ProfileHeader edited={edited} setEdited={setEdited} readOnly={false} onSave={save} onCancel={cancel} /> */}
+        <ProfileHeader edited={edited} setEdited={setEdited} readOnly={false} onSave={save} onCancel={cancel} />
 
         {/* SECTIONS */}
         <PersonalInformation edited={edited} setEdited={setEdited} readOnly={false} />
@@ -43,7 +43,7 @@ export default function EditProfilePage() {
         {/* SAVE BUTTON */}
         <button
           onClick={save}
-          className="w-full py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+          className="w-full py-3 bg-[#1d4350] text-white rounded-lg hover:bg-[#1d4357] transition"
         >
           Save Changes
         </button>

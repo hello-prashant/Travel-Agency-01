@@ -1,8 +1,8 @@
 "use client";
 import { Star } from 'lucide-react';
 import { useState } from 'react';
-import ReviewCard from '@/app/ProfileScreen/components/reviews/ReviewCard';
-import reviews from '@/app/ProfileScreen/data/types/review';
+import ReviewCard from '@/components/reviews/ReviewCard';
+import reviews from '@/types/review';
 
 export default function ReviewsPage() {
   
@@ -29,14 +29,12 @@ export default function ReviewsPage() {
       </div>
 
       {!allLoaded && (
-        <div className="text-center">
         <button
           onClick={loadMore}
-          className="px-10 mt-6  border bg-[#1d4350] text-white hover:bg-[#1d4357] py-2 rounded-lg font-medium"
+          className="w-full mt-6 border bg-[#1d4350] text-white hover:bg-[#1d4357] py-2 rounded-lg font-medium"
         >
           Load More Reviews
         </button>
-        </div>
       )}
     </div>
   );

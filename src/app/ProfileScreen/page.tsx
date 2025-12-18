@@ -1,11 +1,11 @@
 "use client";
 
-import { useProfileStore } from "@/app/ProfileScreen/data/store/profilestore";
-import PersonalInformation from "@/app/ProfileScreen/components/profile/PersonalInformation";
-import ContactInformation from "@/app/ProfileScreen/components/profile/ContactInformation";
-import TravelPreferences from "@/app/ProfileScreen/components/profile/TravelPreferences";
-import SocialMedia from "@/app/ProfileScreen/components/profile/SocialMedia";
-import EmergencyContact from "@/app/ProfileScreen/components/profile/EmergencyContact";
+import { useProfileStore } from "@/store/profilestore";
+import PersonalInformation from "@/components/profile/PersonalInformation";
+import ContactInformation from "@/components/profile/ContactInformation";
+import TravelPreferences from "@/components/profile/TravelPreferences";
+import SocialMedia from "@/components/profile/SocialMedia";
+import EmergencyContact from "@/components/profile/EmergencyContact";
 
 export default function DetailsPage() {
   const { profile } = useProfileStore();
