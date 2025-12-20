@@ -1,32 +1,11 @@
-import React from "react";
-
+'use client'
+import { useRouter } from "next/navigation";
 const HeroSection = () => {
+  const router = useRouter();
+  const goBack = ()=> router.back();
   return (
     <div className=" bg-gray-50 flex flex-col">
-      {/* Navbar */}
-      {/* <header className="w-full border-b border-gray-100 bg-white/90 backdrop-blur z-20">
-        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-          <div className="flex items-center gap-1">
-            <span className="text-2xl font-bold text-pink-500">Travlo</span>
-            <span className="text-2xl font-bold text-pink-500">.</span>
-          </div>
-
-          <nav className="hidden md:flex items-center gap-8 text-sm text-gray-700">
-            <button className="hover:text-pink-500">My Trips</button>
-            <button className="hover:text-pink-500">Explore Trips</button>
-            <button className="hover:text-pink-500">Nearby Essentials</button>
-            <button className="hover:text-pink-500">Community</button>
-          </nav>
-
-          <div className="flex items-center gap-4 text-sm">
-            <button className="text-gray-700 hover:text-pink-500">Log in</button>
-            <button className="px-4 py-2 rounded-full bg-[#F47C7C] text-white font-medium hover:opacity-90">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </header> */}
-
+      
       {/* Hero Section */}
       <main className="w-full">
         <div className="relative w-full mx-auto mt-4 md:mt-3">
@@ -42,7 +21,8 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
             {/* Back button */}
-            <button className="absolute top-6 left-6 flex items-center gap-2 text-black/90 text-base font-bold cursor-pointer">
+            <button onClick={goBack}
+            className="absolute top-6 left-6 flex items-center gap-2 text-black/90 text-base font-bold cursor-pointer">
               <span className="text-2xl">&#8592;</span>
               <span>BACK</span>
             </button>
