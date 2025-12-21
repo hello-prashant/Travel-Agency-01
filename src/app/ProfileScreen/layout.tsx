@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useProfileStore } from "@/store/profilestore";
-import ProfileHeader from "@/components/profile/ProfileHeader";
-import TabNavigation from "@/components/profile/ProfileTabs";
+import { useProfileStore } from "@/app/ProfileScreen/data/store/profilestore";
+import ProfileHeader from "@/app/ProfileScreen/components/profile/ProfileHeader";
+import TabNavigation from "@/app/ProfileScreen/components/profile/ProfileTabs";
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
   const { profile } = useProfileStore();
