@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useProfileStore } from "@/store/profilestore";
+import { useProfileStore } from "@/app/ProfileScreen/data/store/profilestore";
 
-import ProfileHeader from "@/components/profile/ProfileHeader";
-import PersonalInformation from "@/components/profile/PersonalInformation";
-import ContactInformation from "@/components/profile/ContactInformation";
-import TravelPreferences from "@/components/profile/TravelPreferences";
-import SocialMedia from "@/components/profile/SocialMedia";
-import EmergencyContact from "@/components/profile/EmergencyContact";
+import ProfileHeader from "@/app/ProfileScreen/components/profile/ProfileHeader";
+import PersonalInformation from "@/app/ProfileScreen/components/profile/PersonalInformation";
+import ContactInformation from "@/app/ProfileScreen/components/profile/ContactInformation";
+import TravelPreferences from "@/app/ProfileScreen/components/profile/TravelPreferences";
+import SocialMedia from "@/app/ProfileScreen/components/profile/SocialMedia";
+import EmergencyContact from "@/app/ProfileScreen/components/profile/EmergencyContact";
 
 export default function EditProfilePage() {
     const router = useRouter();
