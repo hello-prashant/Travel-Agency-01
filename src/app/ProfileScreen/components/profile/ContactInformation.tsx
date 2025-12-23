@@ -12,21 +12,21 @@ interface Props {
 export default function ContactInformation({ edited, setEdited, readOnly }: any) {
   return (
     <div className="bg-white p-6 rounded shadow space-y-6">
-      <h3 className="font-bold text-gray-800 text-xl">Contact Information</h3>
+      <h3 className="font-bold text-gray-800 text-2xl">Contact Information</h3>
 
        {readOnly ? (
         <div className="space-y-2 text-gray-600">
           <div className="flex items-center gap-3">
-          <Mail className="w-4 h-4 text-gray-400" />
-          <p className="text-sm text-gray-900">Email: {edited.email}</p>
+          <Mail className="w-5 h-5 text-gray-900" />
+          <p className="text-xl text-gray-700">Email: {edited.email}</p>
           </div>
           <div className="flex items-center gap-3">
-          <Phone className="w-4 h-4 text-gray-400" />
-          <p>Phone: {edited.phone}</p>
+          <Phone className="w-5 h-5 text-gray-900" />
+          <p className="text-xl text-gray-700">Phone: {edited.phone}</p>
           </div>
           <div className="flex items-center gap-3">
-          <Navigation className="w-4 h-4 text-gray-400" />
-          <p>City: {edited.city}</p>
+          <Navigation className="w-5 h-5 text-gray-900" />
+          <p className="text-xl text-gray-700">City: {edited.city}</p>
           </div>
         </div>
       ) : (

@@ -28,7 +28,7 @@ export default function EditProfilePage() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
+      <div className="max-w-dvw mx-auto space-y-6">
 
         {/* HEADER (edit mode) */}
         <ProfileHeader edited={edited} setEdited={setEdited} readOnly={false} onSave={save} onCancel={cancel} />

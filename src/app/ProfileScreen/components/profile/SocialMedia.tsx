@@ -12,16 +12,16 @@ interface Props {
 export default function SocialMedia({ edited, setEdited, readOnly}: any) {
   return (
     <div className="bg-white p-6 rounded shadow space-y-6 text-gray-600">
-      <h3 className="font-bold text-gray-800 text-xl">Social Media & Websites</h3>
+      <h3 className="font-bold text-gray-800 text-2xl">Social Media & Websites</h3>
        {readOnly ? (
         <>
         <div className="flex items-center gap-3">
-          <Instagram className="w-4 h-4 text-gray-600" />
-          <p>Instagram: {edited.instagram}</p>
+          <Instagram className="w-5 h-5 text-gray-900" />
+          <p className="text-xl text-gray-700">Instagram: {edited.instagram}</p>
           </div>
           <div className="flex items-center gap-3">
-          <Facebook className="w-4 h-4 text-gray-600" />
-          <p>Facebook: {edited.facebook}</p>
+          <Facebook className="w-5 h-5 text-gray-900" />
+          <p className="text-xl text-gray-700">Facebook: {edited.facebook}</p>
           </div>
         </>
       ) : (

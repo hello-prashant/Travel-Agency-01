@@ -66,7 +66,7 @@ export default function ProfileHeader({
 
             {/* Location */}
             <div className="flex items-center gap-1">
-                <MapPin className="w-4 h-4 text-gray-500"/>
+                <MapPin className="w-4 h-4 text-gray-900"/>
             <p className="text-gray-500 text-sm">{safe(edited.city)}</p>
             
 
@@ -141,7 +141,7 @@ export default function ProfileHeader({
       </div>
 
       {/* BIO */}
-      <p className="text-sm text-gray-700 max-w-3xl">
+      <p className="text-lg text-gray-700 max-w-full pl-22">
         {safe(edited.aboutMe)}
       </p>
 

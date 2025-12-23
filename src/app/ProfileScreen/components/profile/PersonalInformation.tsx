@@ -5,7 +5,7 @@ import React from "react";
 function Info({ label, value }: any) {
   return (
     <div>
-      <p className="text-sm text-gray-500">{label}</p>
+      <p className="text-xl text-gray-600 ">{label}</p>
       <p className="font-medium">{value || "-"}</p>
     </div>
   );
@@ -20,9 +20,9 @@ interface Props {
 export default function PersonalInformation({ edited, setEdited, readOnly }: any) {
   return (
     <div className="bg-white p-6 rounded shadow space-y-6">
-      <h3 className="font-bold text-gray-800 text-xl">Personal Information</h3>
+      <h3 className="font-bold text-gray-800 text-2xl">Personal Information</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600 text-xl">
         {readOnly ? (
           <>
             <Info label="First Name" value={edited.firstName} />

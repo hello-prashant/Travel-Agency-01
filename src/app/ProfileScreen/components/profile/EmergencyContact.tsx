@@ -12,13 +12,13 @@ interface Props {
 export default function EmergencyContact({ edited, setEdited, readOnly }: any) {
   return (
     <div className="bg-white p-6 rounded shadow space-y-6">
-      <h3 className="font-bold text-gray-800 text-xl">Emergency Contact</h3>
+      <h3 className="font-bold text-gray-800 text-2xl">Emergency Contact</h3>
       {readOnly ? (
         <>
-          <p className="text-gray-700 pl-7">Contact Name: {edited.emergencyName}</p>
+          <p className="text-gray-700 pl-7 text-lg">Contact Name: {edited.emergencyName}</p>
           <div className="flex items-center gap-2">
-          <Phone className="w-4 h-4 text-gray-700" />
-          <p className="text-gray-600">Contact Phone: {edited.emergencyPhone}</p>
+          <Phone className="w-5 h-5 text-gray-900" />
+          <p className="text-gray-600 text-lg">Contact Phone: {edited.emergencyPhone}</p>
           </div>
         </>
       ) : (
