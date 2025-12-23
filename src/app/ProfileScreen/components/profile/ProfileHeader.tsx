@@ -89,7 +89,7 @@ export default function ProfileHeader({
 
           {/* VIEW MODE: SHOW "EDIT" BUTTON */}
           {readOnly && (
-            <Link href="Profile/edit"
+            <Link href="ProfileScreen/Profile/edit"
               className="px-5 py-2 rounded-md bg-[#1d4350] text-white hover:bg-[#1d4357] transition"
               onClick={onSave}
             >
