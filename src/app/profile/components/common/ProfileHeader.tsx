@@ -117,21 +117,21 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-4 md:ml-44 lg:ml-40">
-          <div className="flex flex-col items-center justify-center px-6 py-4 border bg-gray-200">
+          <div className="flex flex-col items-center justify-center px-6 py-4  bg-gray-200">
             <span className="text-xl md:text-2xl font-bold text-gray-800">
               {travelerData.stats.followers.toLocaleString()}
             </span>
             <span className="text-xs text-gray-600 mt-1">Followers</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center px-6 py-4 border bg-gray-200">
+          <div className="flex flex-col items-center justify-center px-6 py-4  bg-gray-200">
             <span className="text-xl md:text-2xl font-bold text-gray-800">
               {travelerData.stats.following.toLocaleString()}
             </span>
             <span className="text-xs text-gray-600 mt-1">Following</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center px-6 py-4 border bg-gray-200">
+          <div className="flex flex-col items-center justify-center px-6 py-4  bg-gray-200">
             <span className="text-xl md:text-2xl font-bold text-gray-900">
               {travelerData.stats.tripsCompleted}
             </span>
