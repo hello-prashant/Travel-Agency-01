@@ -1,11 +1,16 @@
-import { FaStar, FaCheck, FaStarHalfAlt, FaCheckCircle, FaMapMarkerAlt, FaShieldAlt, FaHeart  } from "react-icons/fa";
+import { FaStar, FaCheck, FaStarHalfAlt, FaCheckCircle, FaArrowLeft, FaMapMarkerAlt, FaShieldAlt, FaHeart  } from "react-icons/fa";
 
 import { MdPersonAddAlt1 ,MdChat } from "react-icons/md";
 import { TbLuggage } from "react-icons/tb";
 
 export default function HeroSection(){
   return (
-    <div className="w-full h-1/2 shadow ">
+        <div className="w-full h-1/2 shadow relative">
+      {/* Back Button - Top Left Corner */}
+      <button className="absolute top-4 left-4 z-10 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-105">
+        <FaArrowLeft className="text-lg" />
+      </button>
+
       <div className="w-full h-65 ">        
         <img src="/hero-cover-img.jpg" alt="Cover Picture" 
         className="object-cover w-full h-full "/>
