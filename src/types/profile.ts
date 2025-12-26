@@ -1,3 +1,4 @@
+
 export interface TravelerStats {
   followers: number
   following: number
@@ -33,3 +34,4 @@ export interface ReviewData {
   comment: string
   isVerified: boolean
 }
+
