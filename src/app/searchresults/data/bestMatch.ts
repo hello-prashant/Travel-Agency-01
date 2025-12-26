@@ -1,0 +1,108 @@
+import { Trip } from "../types";
+
+export const bestMatchData: Trip[] = [
+    {
+        imageSrc: "/Burj_Al_Arab_Dubai.jpg",
+        information: {
+            heading: "Weekend Hiking Adventure in the Alps",
+            description: "Looking for 2-3 people to join me for an amazing hiking experience! We'll explore beautiful trails and camp under the stars.",
+            activities: ["Hiking", "Culture", "Adventure"],
+            fromLocation: "Kolkata, West Bengal",
+            toLocation: "Shimla, Himachal Pradesh",
+            date: "Dec 15-25, 2025",
+            pricePerPerson: "1,500",
+            count: 30,
+            matchPercentage: 90,
+            spotsAvailable: 2,
+            languages: ["English", "Hindi"],
+            interests: ["Hiking", "Camping", "Photography"],
+            rating: 4.8,
+            compatibility: 95,
+            safeScore: 92,
+            tripTypes: ["Solo", "Group"],
+            foodPreferences: ["Vegetarian", "Vegan"],
+            durationDays: 10,
+            ageRange: [18, 35],
+            budget: 1800,
+            tags: ["Trending", "Best Match", "Featured Trip Leader", "Similar Trips"]
+        }
+    },
+    {
+        imageSrc: "/ladakh.jpg",
+        information: {
+            heading: "Motorbike Ride to Ladakh",
+            description: "If you love biking, join us for a stunning Himalayan road trip.",
+            activities: ["Hiking", "Riding", "Adventure"],
+            fromLocation: "Manali, Himachal Pradesh",
+            toLocation: "Leh, Ladakh",
+            date: "May 10–20, 2026",
+            pricePerPerson: "6,500",
+            count: 63,
+            matchPercentage: 80,
+            spotsAvailable: 10,
+            languages: ["English"],
+            interests: ["Motorbiking", "Adventure", "Culture"],
+            rating: 4.5,
+            compatibility: 88,
+            safeScore: 86,
+            tripTypes: ["Group", "Couple"],
+            foodPreferences: ["Non-Veg", "Halal"],
+            durationDays: 11,
+            ageRange: [18, 45],
+            budget: 7200,
+            tags: ["All", "Best Match", "Featured Trip Agency", "Similar Trips"]
+        }
+    },
+    { 
+        imageSrc: "/goa.jpg",
+        information:{
+        heading: "Beach Camping in Goa",
+        description: "Relaxing beachside camping with bonfire, music, and sunrise views.",
+        activities: ["Adventure", "Culture"],
+        fromLocation: "Mumbai, Maharashtra",
+        toLocation: "Goa, India",
+        date: "Jan 10–12, 2026",
+        pricePerPerson: "2,000",
+        count: 42,
+        matchPercentage: 88,
+        spotsAvailable: 12,
+        languages: ["English"],
+        interests: ["Camping", "Beach", "Music"],
+        rating: 4.6,
+        compatibility: 90,
+        safeScore: 89,
+        tripTypes: ["Group", "Family"],
+        foodPreferences: ["Vegetarian", "Non-Veg"],
+        durationDays: 5,
+        ageRange: [18, 40],
+        budget: 2400,
+        tags: ["Trending", "All", "Similar Trips"]
+        }
+    },
+    {
+        imageSrc: "/desertSafari.jpg",
+        information: {
+    heading: "Desert Safari in Rajasthan",
+    description: "Camel safari, desert camping, and cultural shows in the golden dunes.",
+    activities: ["Adventure", "Culture"],
+    fromLocation: "Jaipur, Rajasthan",
+    toLocation: "Jaisalmer, Rajasthan",
+    date: "Feb 5–8, 2026",
+    pricePerPerson: "3,500",
+    count: 18,
+    matchPercentage: 70,
+    spotsAvailable: 8,
+    languages: ["English", "Hindi"],
+    interests: ["Culture", "Photography"],
+    rating: 4.2,
+    compatibility: 76,
+    safeScore: 80,
+    tripTypes: ["Couple", "Group"],
+    foodPreferences: ["Vegetarian", "Vegan", "Halal"],
+    durationDays: 6,
+    ageRange: [18, 50],
+    budget: 3800,
+    tags: ["All", "Featured Trip Leader"]
+}
+    },
+];
