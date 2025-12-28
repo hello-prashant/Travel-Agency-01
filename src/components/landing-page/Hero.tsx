@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import { MapPin, Calendar, ChevronRight } from "lucide-react";
 
@@ -85,13 +85,16 @@ const Hero: React.FC = () => {
 
             {/* Button */}
             <div className="flex items-end">
-              <button
-                type="submit"
-                className="flex w-full items-center justify-center gap-2  bg-cyan-900 px-6 py-2 text-sm font-semibold text-white shadow-lg hover:bg-cyan-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-900 sm:w-auto"
-              >
-                Find Trips
-                <ChevronRight className="h-4 w-4" />
-              </button>
+             <Link href="/searchresults">
+  <button
+    type="submit"
+    className="flex w-full items-center justify-center gap-2 bg-cyan-900 px-6 py-2 text-sm font-semibold text-white shadow-lg hover:bg-cyan-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-900 sm:w-auto"
+  >
+    Find Trips
+    <ChevronRight className="h-4 w-4" />
+  </button>
+</Link>
+
             </div>
           </div>
         </form>
