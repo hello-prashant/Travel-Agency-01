@@ -1,16 +1,20 @@
 "use client";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MapPin, Calendar, ChevronRight } from "lucide-react";
+
 
 const Hero: React.FC = () => {
   const [destination, setDestination] = useState("Simla");
   const [date, setDate] = useState("");
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: hook this to your search / router logic
-    console.log({ destination, date });
+
+    router.push(
+      `/searchresults?destination=${encodeURIComponent(destination)}&date=${date}`
+    );
   };
 
   return (
@@ -85,7 +89,7 @@ const Hero: React.FC = () => {
 
             {/* Button */}
             <div className="flex items-end">
-             <Link href="/searchresults">
+             
   <button
     type="submit"
     className="flex w-full items-center justify-center gap-2 bg-cyan-900 px-6 py-2 text-sm font-semibold text-white shadow-lg hover:bg-cyan-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-900 sm:w-auto"
@@ -93,7 +97,7 @@ const Hero: React.FC = () => {
     Find Trips
     <ChevronRight className="h-4 w-4" />
   </button>
-</Link>
+
 
             </div>
           </div>
