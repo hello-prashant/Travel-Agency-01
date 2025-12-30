@@ -13,7 +13,7 @@ const HeroSection = () => {
           <div className="relative h-[300px] md:h-[440px] w-full overflow-hidden -mt-[15px] mb-[15px]">
             <img
               src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-              alt="Beach with surfboard"
+              alt=""
               className="w-full h-full object-cover bg-gray-300"
             />
 
@@ -22,9 +22,9 @@ const HeroSection = () => {
 
             {/* Back button */}
             <button onClick={goBack}
-            className="absolute top-6 left-6 flex items-center gap-2 text-black/90 text-base font-bold cursor-pointer">
-              <span className="text-2xl">&#8592;</span>
-              <span>BACK</span>
+            className="absolute top-6 left-6 flex items-center gap-2 text-gray-500 text-base font-medium cursor-pointer bg-white/30 px-2 rounded-full hover:shadow shadow-2xl hover:text-gray-600">
+              <span className="">&#8592;</span>
+              <span>Back</span>
             </button>
 
             {/* Left bottom trip text */}
