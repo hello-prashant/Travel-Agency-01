@@ -128,7 +128,7 @@ export default function AgencyCard() {
                 <FaBriefcase className="text-xs" /> Browse Trips
               </button>
               <button 
-                onClick={()=>router.push("/profile")}
+                onClick={()=>router.push("/tripAgency")}
                className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
                 <LuView className="text-xs" /> View Profile
               </button>
