@@ -1,31 +1,35 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Calendar, MapPin, Users } from "lucide-react";
+import PlanNewTripForm from "@/app/ProfileScreen/components/profile/PlanNewTripForm";
+import { Trip, FormData } from "@/app/ProfileScreen/data/types/trip";
 
-interface Trip {
-  id: number;
-  title: string;
-  location: string;
-  date: string;
-  image: string;
-  status: "Confirmed" | "Pending";
-  participants: string[];
-}
+// interface Trip {
+//   id: number;
+//   title: string;
+//   location: string;
+//   date: string;
+//   image: string;
+//   status: "Confirmed" | "Pending";
+//   participants: string[];
+// }
 
 export default function MyTripsPage() {
   const [activeFilter, setActiveFilter] = useState<"upcoming" | "past">(
     "upcoming"
   );
+  const [showAddForm, setShowAddForm] = useState<boolean>(false);
+  const [nextId, setNextId] = useState<number>(4);
 
-  const upcomingTrips = [
+  const [upcomingTrips, setUpcomingTrips] = useState<Trip[]>([
     {
       id: 1,
       title: 'Paris Adventure',
       location: 'Paris, France',
       date: 'Dec 15 - 22, 2025',
       participants: ['User 1', 'User 2'],
-      country: 'Paris, France',
+      country: 'France',
       image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&h=300&fit=crop',
       status: 'Confirmed',
       participantCount: '+ Piu'
@@ -36,12 +40,12 @@ export default function MyTripsPage() {
       location: 'London, United Kingdom',
       date: 'Feb 10 - 18, 2026',
       participants: ['User 1', 'User 2'],
-      country: 'Paris, France',
+      country: 'United Kingdom',
       image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop',
       status: 'Planned',
       participantCount: '+ Piu'
     }
-  ];
+  ]);
 
 
   const pastTrips = [
@@ -63,6 +67,37 @@ export default function MyTripsPage() {
 
   const tripsToShow = activeFilter === "upcoming" ? upcomingTrips : pastTrips;
   
+  const handleAddTrip = (tripData: FormData): void => {
+    // Format the dates
+    const startDate = new Date(tripData.startDate);
+    const endDate = new Date(tripData.endDate);
+    const formattedDates = `${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+    
+    // Get participants array
+    const participantsList = tripData.participants 
+      ? tripData.participants.split(',').map(name => name.trim())
+      : ['User'];
+    
+    // Create new trip object
+    const newTrip: Trip = {
+      id: nextId,
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop",
+      title: tripData.title,
+      location: `${tripData.destination}, ${tripData.country}`,
+      date: formattedDates,
+      status: tripData.status as any,
+      participants: participantsList,
+      country: tripData.country,
+      participantCount: '+ Piu'
+    };
+    
+    // Add to upcoming trips
+    setUpcomingTrips([newTrip, ...upcomingTrips]);
+    setNextId(nextId + 1);
+    setShowAddForm(false);
+    setActiveFilter('upcoming');
+  };
+
 
   return (
     <div className="max-w-6xl mx-auto p-4">
@@ -74,29 +109,29 @@ export default function MyTripsPage() {
       <div className="flex gap-3 mb-6">
         <button
           onClick={() => setActiveFilter("upcoming")}
-          className={`px-4 py-2 rounded-full text-sm font-medium ${
+          className={`px-4 py-2 cursor-pointer rounded-full text-sm font-medium ${
             activeFilter === "upcoming"
               ? "bg-black text-white"
               : "bg-gray-200 text-gray-700"
           }`}
         >
-          Upcoming (1)
+          Upcoming ({upcomingTrips.length})
         </button>
 
         <button
           onClick={() => setActiveFilter("past")}
-          className={`px-4 py-2 rounded-full text-sm font-medium ${
+          className={`px-4 py-2 cursor-pointer rounded-full text-sm font-medium ${
             activeFilter === "past"
               ? "bg-black text-white"
               : "bg-gray-200 text-gray-700"
           }`}
         >
-          Past Trips (1)
+          Past Trips ({pastTrips.length})
         </button>
       </div>
 
       <div className="mb-6 flex justify-end">
-        <button className="px-5 py-2 bg-[#1d4350] text-white rounded-full shadow">
+        <button onClick={() => setShowAddForm(true)} className="px-5 py-2 cursor-pointer bg-[#1d4350] text-white shadow">
           Plan New Trip
         </button>
       </div>
@@ -106,7 +141,7 @@ export default function MyTripsPage() {
         {tripsToShow.map((trip) => (
           <div
             key={trip.id}
-            className="border  p-4 flex gap-5 shadow-sm bg-white"
+            className=" p-4 flex gap-5 shadow-sm bg-white"
           >
             <img
               src={trip.image}
@@ -130,14 +165,18 @@ export default function MyTripsPage() {
               <div className="flex items-center justify-between mt-2">
                 <div className="flex items-center gap-1 text-sm text-gray-600">
                   <Users className="h-4 w-4" />
-                  {trip.participants.join(", ")}
+                  {trip.participants.join(", ")} {trip.participantCount}
                 </div>
 
                 <span
                   className={`px-3 py-1 text-xs rounded-full font-medium ${
                     trip.status === "Confirmed"
                       ? "bg-green-100 text-green-600"
-                      : "bg-blue-100 text-blue-600"
+                      : trip.status === "Planned" 
+                      ? "bg-blue-100 text-blue-600"
+                      : trip.status === "Completed"
+                      ? "bg-gray-100 text-gray-600"
+                      : "bg-yellow-100 text-yellow-600"
                   }`}
                 >
                   {trip.status}
@@ -154,6 +193,13 @@ export default function MyTripsPage() {
           Plan New Trip
         </button>
       </div> */}
+
+      {showAddForm && (
+        <PlanNewTripForm 
+          onClose={() => setShowAddForm(false)}
+          onSubmit={handleAddTrip}
+        />
+      )}
 
     </div>
   );

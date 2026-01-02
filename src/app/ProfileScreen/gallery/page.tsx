@@ -42,15 +42,23 @@ export default function GalleryPage() {
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-2xl font-bold text-gray-700">Travel Gallery</h3>
 
-          <button className="flex items-center gap-2 bg-[#1d4350] text-white px-4 py-2 rounded-lg shadow-sm hover:bg-[#1d4357]">
+          <label htmlFor="photo-upload" className="flex items-center gap-2 bg-[#1d4350] text-white px-4 py-2 shadow-sm hover:bg-[#1d4357] cursor-pointer transition-colors">
             <Upload size={16} /> Upload Photo
-          </button>
+          </label>
+          <input
+            id="photo-upload"
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={handleFileChange}
+            className="hidden"
+          />
         </div>
 
         {/* GRID GALLERY */}
         <div className="grid grid-cols-3 gap-4">
           {photos.slice(0, visible).map((image, index) => (
-            <div key={index} className="rounded-lg overflow-hidden">
+            <div key={index} className="overflow-hidden">
               <img
                 src={image}
                 alt="Travel Photo"
