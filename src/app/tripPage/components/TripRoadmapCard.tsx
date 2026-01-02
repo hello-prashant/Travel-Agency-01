@@ -6,7 +6,7 @@ export default function TripRoadmapCard({ imgSrc = '/map-preview-v3.png', height
         <img
           src={imgSrc}
           alt="Trip Route Map"
-          className="w-full object-cover"
+          className="w-full object-cover bg-gray-300"
           style={{ height: height }}
         />
       </div>

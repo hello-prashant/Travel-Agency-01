@@ -11,9 +11,11 @@ import TravelPhotosCard from "./components/TravelPhotosCard"
 import FeaturedAgencyContainer from './components/FeaturedAgency';
 
 export default function TripAgency(){
+  
+  
   return (
     <section
-    className="w-full min-h-svh flex flex-col gap-4 pb-5">
+    className="w-full min-h-svh flex flex-col gap-4 pb-5 relative">
       <HeroSection />
       <div className="w-full flex flex-row gap-6 p-6">
         <div className="w-[70%] flex flex-col gap-6 ">

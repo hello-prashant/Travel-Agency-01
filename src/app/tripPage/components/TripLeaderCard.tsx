@@ -8,7 +8,7 @@ export default function TripLeaderCard(){
         <img 
           src={'/person-img.jpg'}
           alt={''}
-          className="rounded-full w-20 h-20"
+          className="rounded-full w-20 h-20 bg-gray-300"
         />
 
         <div className="flex flex-col gap-3">

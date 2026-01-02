@@ -1,19 +1,32 @@
+'use client'
 import { FaStar, FaCheck, FaStarHalfAlt, FaCheckCircle, FaMapMarkerAlt, FaShieldAlt, FaHeart  } from "react-icons/fa";
 
 import { MdPersonAddAlt1 ,MdChat } from "react-icons/md";
 import { TbLuggage } from "react-icons/tb";
 
+import { useRouter } from "next/navigation";
+
 export default function HeroSection(){
+  const router = useRouter();
+  const goBack = ()=> router.back();
+    
   return (
     <div className="w-full h-1/2 shadow ">
+      {/* Back button */}
+      <button onClick={goBack}
+      className="absolute top-6 left-6 flex items-center gap-2 text-gray-500 text-base font-medium cursor-pointer bg-white/30 px-2 rounded-full hover:shadow shadow-2xl hover:text-gray-600">
+        <span className="">&#8592;</span>
+        <span>Back</span>
+      </button>
+
       <div className="w-full h-65 ">        
         <img src="/hero-cover-img.jpg" alt="Cover Picture" 
-        className="object-cover w-full h-full "/>
+        className="object-cover w-full h-full bg-gray-300"/>
       </div>
       <div className="w-full p-6 min-h-45 flex flex-row relative">
         <div className="w-70 h-65 absolute -top-28 ">
           <img src="/hero-profile-pic.jpg" alt="" 
-          className="object-fill w-full h-full shadow-lg"/>
+          className="object-fill w-full h-full shadow-lg bg-gray-300"/>
         </div>
 
         <div className="w-full flex flex-row justify-between ml-70" >

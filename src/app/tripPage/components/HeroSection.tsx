@@ -1,32 +1,11 @@
-import React from "react";
-
+'use client'
+import { useRouter } from "next/navigation";
 const HeroSection = () => {
+  const router = useRouter();
+  const goBack = ()=> router.back();
   return (
     <div className=" bg-gray-50 flex flex-col">
-      {/* Navbar */}
-      {/* <header className="w-full border-b border-gray-100 bg-white/90 backdrop-blur z-20">
-        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-          <div className="flex items-center gap-1">
-            <span className="text-2xl font-bold text-pink-500">Travlo</span>
-            <span className="text-2xl font-bold text-pink-500">.</span>
-          </div>
-
-          <nav className="hidden md:flex items-center gap-8 text-sm text-gray-700">
-            <button className="hover:text-pink-500">My Trips</button>
-            <button className="hover:text-pink-500">Explore Trips</button>
-            <button className="hover:text-pink-500">Nearby Essentials</button>
-            <button className="hover:text-pink-500">Community</button>
-          </nav>
-
-          <div className="flex items-center gap-4 text-sm">
-            <button className="text-gray-700 hover:text-pink-500">Log in</button>
-            <button className="px-4 py-2 rounded-full bg-[#F47C7C] text-white font-medium hover:opacity-90">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </header> */}
-
+      
       {/* Hero Section */}
       <main className="w-full">
         <div className="relative w-full mx-auto mt-4 md:mt-3">
@@ -34,17 +13,18 @@ const HeroSection = () => {
           <div className="relative h-[300px] md:h-[440px] w-full overflow-hidden -mt-[15px] mb-[15px]">
             <img
               src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-              alt="Beach with surfboard"
-              className="w-full h-full object-cover"
+              alt=""
+              className="w-full h-full object-cover bg-gray-300"
             />
 
             {/* Dark gradient overlay bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
             {/* Back button */}
-            <button className="absolute top-6 left-6 flex items-center gap-2 text-black/90 text-base font-bold cursor-pointer">
-              <span className="text-2xl">&#8592;</span>
-              <span>BACK</span>
+            <button onClick={goBack}
+            className="absolute top-6 left-6 flex items-center gap-2 text-gray-500 text-base font-medium cursor-pointer bg-white/30 px-2 rounded-full hover:shadow shadow-2xl hover:text-gray-600">
+              <span className="">&#8592;</span>
+              <span>Back</span>
             </button>
 
             {/* Left bottom trip text */}

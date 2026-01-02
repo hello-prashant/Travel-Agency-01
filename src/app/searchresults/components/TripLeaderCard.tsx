@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import {useRouter} from "next/navigation";
 import Image from "next/image";
 import {
   FaHeart,
@@ -34,6 +35,7 @@ const TripLeaderCard: React.FC<TripLeaderCardProps> = ({
   leaderImage,
   salePercentage = 88,
 }) => {
+  const router = useRouter();
   return (
     <div className="w-full border border-gray-200 bg-white shadow-sm transition hover:shadow-xl">
       <div className="flex flex-col md:flex-row">
@@ -157,15 +159,21 @@ const TripLeaderCard: React.FC<TripLeaderCardProps> = ({
             </div>
 
             <div className="flex flex-wrap gap-2">
-              <button className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
+              <button
+              onClick={()=>router.push("/tripPage")}
+              className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
                 <FaBriefcase className="text-xs" />
                 <span className="whitespace-nowrap">View Trip</span>
               </button>
-              <button className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
+              <button
+              onClick={()=>router.push("/tripPage")}
+              className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
                 <FaUserPlus className="text-xs" />
                 <span className="whitespace-nowrap">Join Trip</span>
               </button>
-              <button className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
+              <button
+              onClick={()=>router.push("/profile")}
+              className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
                 <LuView className="text-xs" />
                 <span className="whitespace-nowrap">View Profile</span>
               </button>

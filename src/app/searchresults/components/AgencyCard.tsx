@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import {
   FaHeart,
@@ -10,6 +12,7 @@ import { LuView } from "react-icons/lu";
 import { IoWarning } from "react-icons/io5";
 
 export default function AgencyCard() {
+  const router = useRouter();
   return (
     <div className="w-full border border-gray-200 bg-white shadow-sm transition hover:shadow-xl">
       <div className="flex flex-col md:flex-row">
@@ -124,7 +127,9 @@ export default function AgencyCard() {
               <button className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
                 <FaBriefcase className="text-xs" /> Browse Trips
               </button>
-              <button className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
+              <button 
+                onClick={()=>router.push("/tripAgency")}
+               className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
                 <LuView className="text-xs" /> View Profile
               </button>
             </div>

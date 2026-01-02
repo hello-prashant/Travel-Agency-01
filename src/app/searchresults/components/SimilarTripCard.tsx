@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 import {
@@ -31,6 +32,7 @@ export function SimilarTripCard({
   host,
   isFavorite = false,
 }: SimilarTripCardProps) {
+  const router = useRouter();
   const [favorite, setFavorite] = useState(isFavorite);
   const capitalizedDestination = destination
     ? destination.charAt(0).toUpperCase() + destination.slice(1)
@@ -167,15 +169,21 @@ export function SimilarTripCard({
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-2">
-              <button className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#15323b] transition-colors items-center">
+              <button
+              onClick={()=>router.push("/tripPage")}
+              className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#15323b] transition-colors items-center">
                 <FaBriefcase className="text-xs" />
                 <span className="whitespace-nowrap">View Trip</span>
               </button>
-              <button className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#15323b] transition-colors items-center">
+              <button
+              onClick={()=>router.push("/tripPage")}
+              className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#15323b] transition-colors items-center">
                 <FaUserPlus className="text-xs" />
                 <span className="whitespace-nowrap">Join Trip</span>
               </button>
-              <button className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#15323b] transition-colors items-center">
+              <button
+              onClick={()=>router.push("/profile")}
+              className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#15323b] transition-colors items-center">
                 <LuView className="text-xs" />
                 <span className="whitespace-nowrap">View Profile</span>
               </button>

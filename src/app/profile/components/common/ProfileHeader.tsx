@@ -1,3 +1,5 @@
+'use client';
+import { useRouter } from 'next/navigation';;
 import { ArrowLeft, MapPin, Star, Shield, UserPlus, Calendar, MessageSquare, Heart } from 'lucide-react'
 
 interface TravelerStats {
@@ -23,6 +25,7 @@ interface ProfileHeaderProps {
 }
 
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
+  const router = useRouter();
   return (
     <div>
       <div className="relative">
@@ -37,7 +40,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 via-transparent to-cyan-500/30" />
 
-          <button className="absolute top-4 left-4 flex items-center gap-2 text-white hover:text-gray-200 transition-colors z-10">
+          <button 
+          onClick={()=>router.back()}
+          className="absolute top-4 left-4 flex items-center gap-2 text-white hover:text-gray-200 transition-colors z-10">
             <ArrowLeft className="w-5 h-5" />
             <span className="text-sm font-medium">Back</span>
           </button>
@@ -117,21 +122,21 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-4 md:ml-44 lg:ml-40">
-          <div className="flex flex-col items-center justify-center px-6 py-4 border bg-gray-200">
+          <div className="flex flex-col items-center justify-center px-6 py-4  bg-gray-200">
             <span className="text-xl md:text-2xl font-bold text-gray-800">
               {travelerData.stats.followers.toLocaleString()}
             </span>
             <span className="text-xs text-gray-600 mt-1">Followers</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center px-6 py-4 border bg-gray-200">
+          <div className="flex flex-col items-center justify-center px-6 py-4  bg-gray-200">
             <span className="text-xl md:text-2xl font-bold text-gray-800">
               {travelerData.stats.following.toLocaleString()}
             </span>
             <span className="text-xs text-gray-600 mt-1">Following</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center px-6 py-4 border bg-gray-200">
+          <div className="flex flex-col items-center justify-center px-6 py-4  bg-gray-200">
             <span className="text-xl md:text-2xl font-bold text-gray-900">
               {travelerData.stats.tripsCompleted}
             </span>
