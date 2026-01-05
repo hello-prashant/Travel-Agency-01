@@ -29,7 +29,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
   return (
     <div>
       <div className="relative">
-        <div className="h-48 md:h-64 w-full bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-500 relative overflow-hidden">
+        <div className="h-48 md:h-64 w-full  from-cyan-400 via-teal-400 to-cyan-500 relative overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
             style={{
@@ -38,7 +38,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
               backgroundPosition: 'left center',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 via-transparent to-cyan-500/30" />
+          <div className="absolute inset-0  from-cyan-400/30 via-transparent to-cyan-500/30" />
 
           <button 
           onClick={()=>router.back()}
