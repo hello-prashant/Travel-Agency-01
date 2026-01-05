@@ -12,7 +12,6 @@ const TRAVEL_STYLES = [
   "Adventure",
   "Relaxation",
   "Culture",
-  "Food",
   "Nature",
   "Photography",
   "Nightlife",
@@ -35,7 +34,7 @@ export default function TravelPreferences({
   setEdited,
   readOnly = false,
 }: Props) {
-  const toggleItem = (key: "travelStyle" | "languages", value: string) => {
+  const toggleItem = (key: "travelStyles" | "languages", value: string) => {
     if (readOnly || !setEdited) return;
 
      const currentValues: string[] = Array.isArray(edited[key])
@@ -51,7 +50,7 @@ export default function TravelPreferences({
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 border space-y-6">
+    <div className="bg-white rounded-lg p-6 space-y-6">
       <h3 className="text-2xl font-bold text-gray-700">Travel Preferences</h3>
 
       {/* Travel Style */}
@@ -59,13 +58,13 @@ export default function TravelPreferences({
         <p className="text-xl font-medium mb-3 text-gray-700">Travel Style & Interests</p>
         <div className="flex flex-wrap gap-2">
           {TRAVEL_STYLES.map((style) => {
-            const selected = edited.travelStyle?.includes(style) ?? false;
+            const selected = edited.travelStyles?.includes(style) ?? false;
 
             return (
               <button
                 key={style}
                 type="button"
-                onClick={() => toggleItem("travelStyle", style)}
+                onClick={() => toggleItem("travelStyles", style)}
                 className={clsx(
                   "px-4 py-1 rounded-full text-lg border transition",
                   selected

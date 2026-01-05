@@ -35,21 +35,21 @@ export default function ContactInformation({ edited, setEdited, readOnly }: any)
         <input
           value={edited.email}
           onChange={(e) => setEdited({ ...edited, email: e.target.value })}
-          className="border p-2 rounded text-gray-600"
+          className="border p-2 text-gray-600"
           placeholder="Email"
         />
 
         <input
           value={edited.phone}
           onChange={(e) => setEdited({ ...edited, phone: e.target.value })}
-          className="border p-2 rounded text-gray-600"
+          className="border p-2 text-gray-600"
           placeholder="Phone"
         />
 
         <input
           value={edited.city}
           onChange={(e) => setEdited({ ...edited, city: e.target.value })}
-          className="border p-2 rounded text-gray-600"
+          className="border p-2 text-gray-600"
           placeholder="City"
         />
       </div>
