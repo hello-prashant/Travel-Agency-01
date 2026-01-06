@@ -22,7 +22,7 @@ export default function ProfileHeader({
   const safe = (v: any) => v ?? "";
 
   return (
-    <div className="bg-white shadow rounded-lg p-6 space-y-4">
+    <div className="bg-white shadow p-6 space-y-4">
 
       {/* TOP ROW: PROFILE IMAGE + DETAILS + BUTTONS */}
       <div className="flex items-start justify-between gap-4">
