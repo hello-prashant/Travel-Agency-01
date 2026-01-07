@@ -36,7 +36,7 @@ export default function TravelerCard() {
       
       {/* Title */}
       <div >
-        <h2 className="text-xl font-semibold text-black">
+        <h2 className="text-xl font-semibold  ">
           Joined Travelers ({travelers.length})
         </h2>
       </div>
@@ -100,7 +100,7 @@ export default function TravelerCard() {
 
             {/* View Button */}
             <Link href={'/profile/'} 
-            className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm ">
+            className="px-4 md:px-6 py-2 bg-[#1D4350] text-white font-semibold text-sm ">
               View
             </Link>
           </div>

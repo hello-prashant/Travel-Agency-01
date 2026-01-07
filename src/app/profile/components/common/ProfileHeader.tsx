@@ -42,13 +42,13 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
 
           <button 
           onClick={()=>router.back()}
-          className="absolute top-4 left-4 flex items-center gap-2 text-white hover:text-gray-200 transition-colors z-10">
+          className="absolute top-6 left-6 flex items-center gap-2 text-black text-base font-medium cursor-pointer bg-gray-200 px-2 rounded-full hover:shadow shadow-2xl hover:text-gray-600">
             <ArrowLeft className="w-5 h-5" />
             <span className="text-sm font-medium">Back</span>
           </button>
         </div>
 
-        <div className="absolute ml-20 left-4 md:left-8 -bottom-16 md:-bottom-44">
+        <div className="absolute ml-10 left-2 md:left-4 -bottom-16 md:-bottom-44">
           <div className="w-40 h-48 md:w-72 md:h-80 p-1 shadow-lg">
             <div
               className="w-full h-full bg-gray-300 bg-cover bg-center"
@@ -103,19 +103,19 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
           </div>
 
           <div className="flex justify-end items-center gap-2 md:gap-4">
-            <button className="flex items-center  gap-2 px-4 py-2  bg-[#1D4350] text-white text-sm font-medium  hover:bg-teal-700 transition-colors">
+            <button className="flex items-center  gap-2 px-4 py-2  bg-[#1D4350] text-white text-sm font-medium  hover:bg-gray-600 transition-colors">
               <UserPlus className="w-5 h-7" />
               Follow
             </button>
-            <button className="flex items-center gap-2 px-4 py-2  bg-[#1D4350] text-white text-sm font-medium  hover:bg-teal-700 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2  bg-[#1D4350] text-white text-sm font-medium  hover:bg-gray-600 transition-colors">
               <Calendar className=" w-5 h-7 " />
               Join Trip
             </button>
-            <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-teal-700 transition-colors">
+            <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-gray-600 transition-colors">
               <MessageSquare className="w-5 h-5" />
             </button>
 
-            <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-teal-700 transition-colors">
+            <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-gray-600 transition-colors">
               <Heart className="w-5 h-5" />
             </button>
           </div>
