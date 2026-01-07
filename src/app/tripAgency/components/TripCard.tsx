@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BsPeopleFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
+import ROUTES from "../../../../lib/routes";
 
 type Props = {
   trip: any,
@@ -57,13 +58,13 @@ export default function TripCard({trip, past}:Props) {
 
         <div className="w-full inline-flex items-center gap-4 ">
           {!past &&
-            <Link href={'/tripPage/'}
+            <Link href={ROUTES.TRIPPAGE}
             className="px-4 py-1.5 md:py-2 bg-[#1d4350] hover:bg-cyan-800 text-white cursor-pointer transition-colors duration-300">
               Join Trip
             </Link>
           }
 
-          <Link href={"/tripPage/"}
+          <Link href={ROUTES.TRIPPAGE}
           className="px-4 py-1.5 md:py-2 text-cyan-800 border border-cyan-800 cyrsor-pointer hover:text-white hover:bg-cyan-800 transition-all duration-300">
             View trip details
           </Link>

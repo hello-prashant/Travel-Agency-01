@@ -4,6 +4,7 @@ import AboutSection from '@/app/profile/components/common/AboutSection'
 import ProfileTabs from '@/app/profile/components/common/ProfileTabs'
 import { TravelerData } from '@/types/profile'
 import SimilarTravelers from '@/app/profile/components/cards/SimilarTravelers'
+import ROUTES from "../../../lib/routes"
 const travelerData: TravelerData = {
   name: 'Jane Cooper',
   isVerified: true,

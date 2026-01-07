@@ -14,6 +14,7 @@ import {
 import { LuView } from "react-icons/lu";
 import { IoWarning } from "react-icons/io5";
 import { Trip } from "../types";
+import ROUTES from "../../../../lib/routes";
 
 export default function BestMatchCard({ trip }: { trip: Trip }) {
   const router = useRouter();
@@ -154,19 +155,19 @@ export default function BestMatchCard({ trip }: { trip: Trip }) {
 
             <div className="flex flex-wrap gap-2">
               <button
-              onClick={()=>router.push("/tripPage")}
+              onClick={()=>router.push(ROUTES.TRIPPAGE)}
               className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
                 <FaBriefcase className="text-xs" />
                 <span className="whitespace-nowrap">View Trip</span>
               </button>
               <button
-              onClick={()=>router.push("/tripPage")}
+              onClick={()=>router.push(ROUTES.TRIPPAGE)}
               className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
                 <FaUserPlus className="text-xs" />
                 <span className="whitespace-nowrap">Join Trip</span>
               </button>
               <button
-              onClick={()=>router.push("/profile")}
+              onClick={()=>router.push(ROUTES.PROFILE)}
               className="flex gap-1.5 bg-[#1D4350] px-3 py-1.5 text-xs font-semibold text-white cursor-pointer hover:bg-[#15323b] transition-colors items-center">
                 <LuView className="text-xs" />
                 <span className="whitespace-nowrap">View Profile</span>

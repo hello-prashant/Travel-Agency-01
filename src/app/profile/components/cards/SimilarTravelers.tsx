@@ -16,6 +16,7 @@ import {
     ChevronRight
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import ROUTES from "../../../../../lib/routes";
 
 export default function SimilarTravelers() {
     const [isLiked, setIsLiked] = useState([false, false, false]);
@@ -54,9 +55,9 @@ export default function SimilarTravelers() {
         router.push(`/trips/${tripId}`);
     };
 
-    const handleJoinTrip = () => {
-        alert('Join trip functionality would be implemented here');
-    };
+    // const handleJoinTrip = () => {
+    //     alert('Join trip functionality would be implemented here');
+    // };
 
     const handlePrevCard = () => {
         setCurrentCardIndex((prev) => (prev === 0 ? cardsData.length - 1 : prev - 1));
@@ -271,14 +272,15 @@ export default function SimilarTravelers() {
                                                         <Briefcase className="w-3 h-3 mr-1" />
                                                         View Trip
                                                     </button>
-                                                    <button 
-                                                        onClick={handleJoinTrip}
+                                                    { <button 
+                                                        onClick={()=>router.push(ROUTES.TRIPPAGE)}
                                                         className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
                                                     >
                                                         <UserPlus className="w-3 h-3 mr-1" />
                                                         Join Trip
-                                                    </button>
-                                                    <Link href="/profile" className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
+                                                    </button> }
+                                                    
+                                                    <Link href={ROUTES.PROFILE} className="bg-slate-800 hover:bg-slate-700 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
                                                         <Eye className="w-3 h-3 mr-1" />
                                                         View Profile
                                                     </Link>

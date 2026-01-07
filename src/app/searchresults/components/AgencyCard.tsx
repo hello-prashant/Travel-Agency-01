@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { LuView } from "react-icons/lu";
 import { IoWarning } from "react-icons/io5";
+import ROUTES from "../../../../lib/routes";
 
 export default function AgencyCard() {
   const router = useRouter();
@@ -124,11 +125,13 @@ export default function AgencyCard() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              <button className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
+              <button
+                onClick={()=>router.push(ROUTES.TRIPAGENCY)}
+               className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
                 <FaBriefcase className="text-xs" /> Browse Trips
               </button>
               <button 
-                onClick={()=>router.push("/tripAgency")}
+                onClick={()=>router.push(ROUTES.PROFILE)}
                className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
                 <LuView className="text-xs" /> View Profile
               </button>
