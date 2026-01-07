@@ -37,7 +37,7 @@ export const useProfileStore = create<ProfileStore>((set) => ({
     verified: true,
     phone: "+1 234 5678",
     city: "San Francisco",
-    travelStyles: ["Adventure", "Relaxation", "Food", "Photography"],
+    travelStyles: ["Adventure", "Relaxation", "Photography"],
     categories: ["Asia", "Europe", "French", "German", "Italian"],
     languages: ["English", "French"],
     emergencyName: "John",

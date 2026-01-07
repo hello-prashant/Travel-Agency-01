@@ -22,7 +22,7 @@ export default function ProfileHeader({
   const safe = (v: any) => v ?? "";
 
   return (
-    <div className="bg-white shadow rounded-lg p-6 space-y-4">
+    <div className="bg-white shadow p-6 space-y-4">
 
       {/* TOP ROW: PROFILE IMAGE + DETAILS + BUTTONS */}
       <div className="flex items-start justify-between gap-4">
@@ -90,7 +90,7 @@ export default function ProfileHeader({
           {/* VIEW MODE: SHOW "EDIT" BUTTON */}
           {readOnly && (
             <Link href="/ProfileScreen/Profile/edit"
-              className="px-5 py-2 rounded-md bg-[#1d4350] text-white hover:bg-[#1d4357] transition"
+              className="px-5 py-2 bg-[#1d4350] text-white hover:bg-[#1d4357] transition"
               onClick={onSave}
             >
               Edit Profile
@@ -101,7 +101,7 @@ export default function ProfileHeader({
           {!readOnly && (
             <>
               <button
-                className="px-5 py-2 flex gap-2 rounded-md border text-[#1d4350] border-[#1d4350] hover:bg-gray-200 transition"
+                className="px-5 py-2 flex gap-2 cursor-pointer border text-[#1d4350] border-[#1d4350] hover:bg-gray-200 transition"
                 onClick={onCancel}
               >
                 <X size={25}/>
@@ -109,7 +109,7 @@ export default function ProfileHeader({
               </button>
 
               <button
-                className="px-5 py-2 gap-2 flex rounded-md bg-[#1d4350] text-white hover:bg-[#1d4357] transition"
+                className="px-5 py-2 gap-2 cursor-pointer flex bg-[#1d4350] text-white hover:bg-[#1d4357] transition"
                 onClick={onSave}
               >
                 <Check size={25}/>

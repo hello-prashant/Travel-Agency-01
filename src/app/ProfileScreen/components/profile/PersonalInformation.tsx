@@ -28,12 +28,13 @@ export default function PersonalInformation({ edited, setEdited, readOnly }: any
             <Info label="First Name" value={edited.firstName} />
             <Info label="Last Name" value={edited.lastName} />
             <Info label="Gender" value={edited.gender} />
+            <Info label="Date Of Birth" value={edited.dateOfBirth} />
             <Info label="Occupation" value={edited.occupation} />
           </>
         ) : (
           <>
         <input
-          className="border p-2 rounded text-gray-600"
+          className="border p-2 text-gray-600"
           placeholder="First Name"
           value={edited.firstName}
           onChange={(e) =>
@@ -42,7 +43,7 @@ export default function PersonalInformation({ edited, setEdited, readOnly }: any
         />
 
         <input
-          className="border p-2 rounded text-gray-600"
+          className="border p-2 text-gray-600"
           placeholder="Last Name"
           value={edited.lastName}
           onChange={(e) =>
@@ -52,19 +53,23 @@ export default function PersonalInformation({ edited, setEdited, readOnly }: any
 
         <input
           type="date"
-          className="border p-2 rounded text-gray-600"
-          value={edited.dateOfBirth}
-          onChange={(e) =>
-            setEdited({ ...edited, dateOfBirth: e.target.value })
-          }
+          placeholder="Date Of Birth"
+          className="border p-2 text-gray-400"
+          value={edited.dateOfBirth || ""}
+          readOnly
+          disabled
+          // onChange={(e) =>
+          //   setEdited({ ...edited, dateOfBirth: e.target.value })
+          // }
         />
 
         <select
-          className="border p-2 rounded text-gray-600"
-          value={edited.gender}
-          onChange={(e) =>
-            setEdited({ ...edited, gender: e.target.value })
-          }
+          className="border p-2 text-gray-400"
+          value={edited.gender || ""}
+          disabled
+          // onChange={(e) =>
+          //   setEdited({ ...edited, gender: e.target.value })
+          // }
         >
           <option>Female</option>
           <option>Male</option>
@@ -72,7 +77,7 @@ export default function PersonalInformation({ edited, setEdited, readOnly }: any
         </select>
 
         <input
-          className="border p-2 rounded text-gray-600"
+          className="border p-2 text-gray-600"
           placeholder="Occupation"
           value={edited.occupation}
           onChange={(e) =>
@@ -81,7 +86,7 @@ export default function PersonalInformation({ edited, setEdited, readOnly }: any
         />
 
         <input
-          className="border p-2 rounded text-gray-600"
+          className="border p-2 text-gray-600"
           placeholder="Profile Photo URL"
           value={edited.profilePhoto ?? ""}
           onChange={(e) =>
@@ -90,7 +95,7 @@ export default function PersonalInformation({ edited, setEdited, readOnly }: any
         />
 
         <textarea
-          className="col-span-full border p-2 rounded text-gray-600"
+          className="col-span-full border p-2 text-gray-600"
           placeholder="About Me"
           value={edited.aboutMe}
           onChange={(e) =>

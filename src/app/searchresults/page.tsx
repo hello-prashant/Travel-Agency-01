@@ -45,7 +45,7 @@ export default function SearchResultsPage() {
 
   return (
     <div className=" bg-gray-50 p-4 md:p-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row">
+      <div className="mx-auto flex max-w-8xl flex-col gap-6 lg:flex-row">
         <Filter
           destination={destination}
           setDestination={setDestination}

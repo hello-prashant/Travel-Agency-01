@@ -17,7 +17,7 @@ interface ReviewCardProps {
 
 export default function ReviewCard({ review }: ReviewCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <div className="bg-white shadow-sm border border-gray-100 p-6">
       <div className="flex items-start gap-4 ">
         <img
           src={review.avatar}
@@ -39,7 +39,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
           <p className="text-gray-700 mt-2">{review.comment}</p>
           <div className="flex flex-wrap gap-2 mt-3">
             {review.tags.map(tag => (
-              <span key={tag} className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs">
+              <span key={tag} className="bg-red-100 text-red-600 px-3 py-1 text-xs">
                 {tag}
               </span>
             ))}
