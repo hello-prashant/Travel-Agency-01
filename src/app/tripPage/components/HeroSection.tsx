@@ -1,4 +1,5 @@
 'use client'
+import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 const HeroSection = () => {
   const router = useRouter();
@@ -21,11 +22,11 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
             {/* Back button */}
-            <button onClick={goBack}
-            className="absolute top-6 left-6 flex items-center gap-2 text-black text-base font-medium cursor-pointer bg-gray-200 px-2 rounded-full hover:shadow shadow-2xl hover:text-gray-600">
-              <span className="">&#8592;</span>
-              <span>Back</span>
-            </button>
+           <button onClick={()=>router.back()}
+          className="absolute top-4 left-4 flex items-center gap-2 text-white hover:text-gray-200 transition-colors z-10">
+            <ArrowLeft className="w-5 h-5" />
+            <span className="text-sm font-medium">Back</span>
+          </button>
 
             {/* Left bottom trip text */}
             <div className="absolute bottom-8 left-6 md:left-10 text-white">

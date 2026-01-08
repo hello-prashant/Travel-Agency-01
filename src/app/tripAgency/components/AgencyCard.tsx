@@ -190,7 +190,7 @@ export default function FeaturedAgencyCard({ agency, index }: Props) {
                 <LuUserPlus className="size-3.5 mr-1" strokeWidth={2} />
                 Join Trip
               </Link>
-              <Link href={ROUTES.PROFILE} className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
+              <Link href={ROUTES.TRIPPAGE} className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
                 <LuEye className="size-4 mr-1" strokeWidth={2} />
                 View Profile
               </Link>
