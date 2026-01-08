@@ -111,13 +111,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
               <Calendar className=" w-5 h-7 " />
               Join Trip
             </button>
-<<<<<<< HEAD
-            <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-gray-600 transition-colors">
-=======
 
             
             <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-teal-700 transition-colors">
->>>>>>> b548e8018c884353c0e0febd6527c950cb30ae84
               <MessageSquare className="w-5 h-5" />
             </button>
 
