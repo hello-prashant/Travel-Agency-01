@@ -126,12 +126,12 @@ export default function AgencyCard() {
 
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={()=>router.push(ROUTES.TRIPAGENCY)}
+                onClick={()=>router.push(ROUTES.TRIPPAGE)}
                className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
                 <FaBriefcase className="text-xs" /> Browse Trips
               </button>
               <button 
-                onClick={()=>router.push(ROUTES.PROFILE)}
+                onClick={()=>router.push(ROUTES.TRIPAGENCY)}
                className="bg-[#1D4350] text-white text-xs px-3 py-1.5 font-semibold hover:bg-[#15323b] transition-colors flex items-center gap-1.5">
                 <LuView className="text-xs" /> View Profile
               </button>

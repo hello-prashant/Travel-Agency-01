@@ -16,7 +16,7 @@ export default function HeroSection(){
     <div className="w-full h-1/2 shadow ">
       {/* Back button */}
       <button onClick={goBack}
-      className="absolute top-6 left-6 flex items-center gap-2 text-gray-500 text-base font-medium cursor-pointer bg-white/30 px-2 rounded-full hover:shadow shadow-2xl hover:text-gray-600">
+      className="absolute top-6 left-6 flex items-center gap-2 text-gray-500 text-base font-medium cursor-pointer  hover:shadow shadow-2xl hover:text-gray-800">
         <span className="">&#8592;</span>
         <span>Back</span>
       </button>
