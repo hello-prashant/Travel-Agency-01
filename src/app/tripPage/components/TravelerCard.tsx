@@ -101,7 +101,7 @@ export default function TravelerCard() {
 
             {/* View Button */}
             <Link href={ROUTES.PROFILE} 
-            className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm ">
+            className="px-4 md:px-6 py-2 bg-[#104350] hover:bg-gray-600 text-white font-semibold text-sm ">
               View
             </Link>
           </div>
