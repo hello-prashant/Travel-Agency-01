@@ -6,6 +6,7 @@ import { LuShieldCheck, LuEye, LuStar, LuHeart, LuCircleCheck, LuUserPlus, } fro
 import { CiWarning } from "react-icons/ci";
 import { FaBriefcase, FaWallet, FaFlag, FaCalendar, FaUser,} from "react-icons/fa";
 import { SlBadge } from "react-icons/sl";
+import ROUTES from "../../../../lib/routes";
 
 type Props = {
   agency: any;
@@ -177,19 +178,19 @@ export default function FeaturedAgencyCard({ agency, index }: Props) {
             </div>
 
             <div className="flex items-center gap-2 mt-2 lg:mt-0">
-              <Link href={'/tripPage/'}
+              <Link href={ROUTES.TRIPPAGE}
                 className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
               >
                 <FaBriefcase className="size-3 mr-1" />
                 View Trip
               </Link>
-              <Link href={'/tripPage/'}
+              <Link href={ROUTES.TRIPPAGE}
                 className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer"
               >
                 <LuUserPlus className="size-3.5 mr-1" strokeWidth={2} />
                 Join Trip
               </Link>
-              <Link href="/profile" className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
+              <Link href={ROUTES.PROFILE} className="bg-[#1d4350] hover:bg-cyan-800 text-white h-8 px-3 text-xs font-medium flex items-center transition-colors cursor-pointer">
                 <LuEye className="size-4 mr-1" strokeWidth={2} />
                 View Profile
               </Link>

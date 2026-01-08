@@ -1,3 +1,6 @@
+'use client';
+import {useRouter} from "next/navigation";
+import ROUTES from "../../../../../lib/routes";
 interface TripData {
   id: number
   title: string
@@ -8,9 +11,15 @@ interface TripData {
   isPastTrip?: boolean
 }
 
-const TripCard: React.FC<TripData> = ({ title, location, dates, travelers, image, isPastTrip = false }) => (
+
+const TripCard: React.FC<TripData> = ({ title, location, dates, travelers, image, isPastTrip = false }) => {
+    const router = useRouter();
+
+    return (
   <div className="bg-white shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow mb-2">
+  
     <div className="flex flex-col sm:flex-row">
+      
       {/* Image Section */}
       <div className="m-2 w-full sm:w-1/3 h-36 sm:h-40 relative flex-shrink-0">
         <img
@@ -19,6 +28,7 @@ const TripCard: React.FC<TripData> = ({ title, location, dates, travelers, image
           className="w-full h-full object-cover"
         />
       </div>
+     
       
       {/* Content Section */}
       <div className="flex-1 p-4 flex flex-col justify-between">
@@ -62,20 +72,31 @@ const TripCard: React.FC<TripData> = ({ title, location, dates, travelers, image
           </div>
         </div>
         
+        
         {/* Buttons */}
         <div className="flex gap-2">
           {!isPastTrip && (
+<<<<<<< HEAD
             <button className="px-4 py-1.5 bg-[#1D4350] text-white hover:bg-gray-600 transition-colors font-medium text-sm">
+=======
+            <button 
+            onClick={()=>router.push(ROUTES.TRIPPAGE)}
+            className="px-4 py-1.5 bg-[#1D4350] text-white hover:bg-teal-700 transition-colors font-medium text-sm">
+>>>>>>> b548e8018c884353c0e0febd6527c950cb30ae84
               Join Trip
             </button>
           )}
-          <button className="px-4 py-1.5 border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm">
+          <button
+           onClick={()=>router.push(ROUTES.TRIPPAGE)}
+           className="px-4 py-1.5 border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm">
             View trip details
           </button>
         </div>
       </div>
     </div>
   </div>
-)
+    )
+}
+
 
 export default TripCard;

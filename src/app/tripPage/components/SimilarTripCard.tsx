@@ -2,6 +2,7 @@ import { FaMapMarkerAlt, } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
 import { IoMdAirplane } from "react-icons/io";
 import Link from "next/link";
+import ROUTES from "../../../../lib/routes";
 
 type Props = {
   trip: any;
@@ -34,8 +35,8 @@ export default function SimilarTripCard({ trip }: Props) {
           {trip.locations[1]}
         </p>
         
-        <Link href={"/tripPage/"}
-        className="w-full px-4 py-2 bg-[#1d4350] text-white text-center font-semibold cursor-pointer hover:bg-gray-600 transition-all duration-300">
+        <Link href={ROUTES.TRIPPAGE}
+        className="w-full px-4 py-2 bg-[#1d4350] text-white text-center font-semibold cursor-pointer hover:bg-cyan-800 transition-all duration-300">
           View Trip
         </Link>
       </div>

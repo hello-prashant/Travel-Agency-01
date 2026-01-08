@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 import { BsShieldFillCheck } from "react-icons/bs";
+import ROUTES from "../../../../lib/routes";
 
 // Simple traveler list
 const travelers = [
@@ -99,8 +100,8 @@ export default function TravelerCard() {
             </div>
 
             {/* View Button */}
-            <Link href={'/profile/'} 
-            className="px-4 md:px-6 py-2 bg-[#1D4350] text-white font-semibold text-sm ">
+            <Link href={ROUTES.PROFILE} 
+            className="px-4 md:px-6 py-2 bg-black text-white font-semibold text-sm ">
               View
             </Link>
           </div>
