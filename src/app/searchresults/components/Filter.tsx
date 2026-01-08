@@ -116,7 +116,8 @@ export default function Filter({
   };
 
   return (
-    <aside className="w-full bg-white p-4 shadow-sm lg:w-80 lg:self-start h-fit">
+    //sidebar filter
+<aside className="w-full bg-white p-4 shadow-sm lg:w-80 lg:self-start lg:sticky lg:top-4 max-h-[calc(100vh-2rem)] overflow-y-auto scrollbar-thin">
       <div className="flex items-center justify-between text-sm text-gray-500">
         <button className="text-teal-800">&larr; Back</button>
         <button onClick={handleClearFilters} className="text-teal-800">
