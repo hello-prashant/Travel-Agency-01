@@ -1,5 +1,6 @@
 "use client";
-
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useTripFilters } from "./hooks/useTripFilters";
 import { categories } from "./data/constants";
 import Filter from "./components/Filter";
@@ -9,6 +10,8 @@ import TripLeaderCard from "./components/TripLeaderCard";
 import { SimilarTripCard } from "./components/SimilarTripCard";
 
 export default function SearchResultsPage() {
+   const searchParams = useSearchParams();
+  const destinationFromQuery = searchParams.get("destination");
   const {
     destination,
     setDestination,
@@ -42,6 +45,12 @@ export default function SearchResultsPage() {
     filteredTrips,
     handleClearFilters,
   } = useTripFilters();
+
+  useEffect(() => {
+  if (destinationFromQuery) {
+    setDestination((prev) => prev || destinationFromQuery);
+  }
+}, [destinationFromQuery]);
 
   return (
     <div className=" bg-gray-50 p-4 md:p-8">
