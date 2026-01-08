@@ -76,13 +76,9 @@ const TripCard: React.FC<TripData> = ({ title, location, dates, travelers, image
         {/* Buttons */}
         <div className="flex gap-2">
           {!isPastTrip && (
-<<<<<<< HEAD
-            <button className="px-4 py-1.5 bg-[#1D4350] text-white hover:bg-gray-600 transition-colors font-medium text-sm">
-=======
             <button 
             onClick={()=>router.push(ROUTES.TRIPPAGE)}
             className="px-4 py-1.5 bg-[#1D4350] text-white hover:bg-teal-700 transition-colors font-medium text-sm">
->>>>>>> b548e8018c884353c0e0febd6527c950cb30ae84
               Join Trip
             </button>
           )}

@@ -92,7 +92,6 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
                   ({travelerData.reviewCount} reviews)
                 </span>
               </div>
-
               <div className="flex items-center gap-1 bg-green-200 rounded-full font-styles-bold px-3 py-1">
                 <Shield className="w-4 h-4 text-emerald-500 " />
                 <span className="text-sm  font-medium text-emerald-700">
@@ -111,13 +110,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ travelerData }) => {
               <Calendar className=" w-5 h-7 " />
               Join Trip
             </button>
-<<<<<<< HEAD
-            <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-gray-600 transition-colors">
-=======
 
             
             <button className="w-12 h-12 flex items-center justify-center bg-[#1D4350] text-white rounded-full hover:bg-teal-700 transition-colors">
->>>>>>> b548e8018c884353c0e0febd6527c950cb30ae84
               <MessageSquare className="w-5 h-5" />
             </button>
 
