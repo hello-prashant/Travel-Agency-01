@@ -5,7 +5,7 @@ import { MapPin, Calendar, ChevronRight } from "lucide-react";
 
 
 const Hero: React.FC = () => {
-  const [destination, setDestination] = useState("Simla");
+  const [destination, setDestination] = useState("");
   const [date, setDate] = useState("");
   const router = useRouter();
 
@@ -51,33 +51,34 @@ const Hero: React.FC = () => {
         {/* Search Card */}
         <form
           onSubmit={handleSubmit}
-          className="mt-8 w-full max-w-3xl  bg-white/10 p-4 backdrop-blur border border-white/20 shadow-xl"
+          className=" w-full max-w-3xl  p-4 "
+          // backdrop-blur border border-white/20   bg-white/10 
         >
           <div className="flex flex-col gap-4 sm:flex-row">
             {/* Destination input */}
             <div className="flex-1">
-              <label className="mb-1 block text-left text-xs font-semibold uppercase tracking-wide text-gray-200">
+              {/* <label className="mb-1 block text-left text-xs font-semibold uppercase tracking-wide text-gray-200">
                 Destination
-              </label>
-              <div className="flex items-center gap-2  bg-white/90 px-3 py-2 text-gray-900">
-                <MapPin className="h-4 w-4 opacity-70" />
+              </label> */}
+              <div className="flex items-center gap-2  bg-white px-3 py-2 text-gray-900">
+                <MapPin className="h-4 w-4 " />
                 <input
                   type="text"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
-                  className="w-full bg-transparent text-sm outline-none placeholder:text-gray-400"
-                  placeholder="Where to?"
+                  className="w-full bg-transparent text-sm outline-none  placeholder:text-black"
+                  placeholder="Destination"
                 />
               </div>
             </div>
 
             {/* Date input */}
             <div className="flex-1">
-              <label className="mb-1 block text-left text-xs font-semibold uppercase tracking-wide text-gray-200">
+              {/* <label className="mb-1 block text-left text-xs font-semibold uppercase tracking-wide text-gray-200">
                 Date
-              </label>
-              <div className="flex items-center gap-2  bg-white/90 px-3 py-2 text-gray-900">
-                <Calendar className="h-4 w-4 opacity-70" />
+              </label> */}
+              <div className="flex items-center gap-2  bg-white px-3 py-2 text-gray-900">
+                <Calendar className="h-4 w-4 " />
                 <input
                   type="date"
                   value={date}
