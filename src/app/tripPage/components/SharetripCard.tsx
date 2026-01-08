@@ -6,13 +6,13 @@ export default function ShareTripCard(){
       <h2 className="font-bold text-lg ">Share this trip</h2>
       <div className="w-full flex flex-row gap-6 md:gap-10 mt-4">
         <a className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 cursor-pointer">
-          <LuFacebook className="w-10 h-10 hover:scale-110"/>
+          <LuFacebook className="w-6 h-6 hover:scale-110"/>
         </a>
         <a className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 cursor-pointer">
-          <LuTwitter className="w-10 h-10 hover:scale-110"/>
+          <LuTwitter className="w-6 h-6 hover:scale-110"/>
         </a>
         <a className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 cursor-pointer">
-          <FaWhatsapp className="w-10 h-10 hover:scale-110"/>
+          <FaWhatsapp className="w-6 h-6 hover:scale-110"/>
         </a>
         <button className="px-4 py-1.5 bg-[#1D4350] text-white font-semibold cursor-pointer">
           Copy
